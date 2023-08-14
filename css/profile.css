@@ -6,7 +6,7 @@
 
 .header {
   width: 100%;
-  height: 6vh;
+  height: 50px;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -18,6 +18,7 @@
 }
 
 .header .Left-Header {
+  flex-basis: 25%;
   display: flex;
   align-items: center;
   margin-left: 18px;
@@ -59,6 +60,7 @@
   margin-top: 10px;
   display: flex;
   height: 100%;
+  flex-basis: 47%;
 }
 
 .Homepage,
@@ -69,8 +71,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 130px;
-  height: 48px;
+  width: 120px;
+  height: 40px;
   border: 1px solid none;
   border-radius: 10px;
   margin-right: 10px;
@@ -82,6 +84,7 @@
 .Group:hover,
 .Games:hover {
   background-color: #f0f2f5;
+  /* width: 100%; */
 }
 .header .Right-Header {
   background-color: none;
@@ -90,6 +93,7 @@
   right: 0;
   margin-top: 0px;
   display: flex;
+  flex-basis: 25%;
 }
 
 .Menu,
@@ -138,7 +142,7 @@
 .Main .MainBackGround {
   /* background-color: yellow; */
   width: 100%;
-  height: 77.5vh;
+  height: 500px;
   display: flex;
 }
 
@@ -171,7 +175,7 @@
 
 .Main .MainBackGround .MainBG-Content .CoverPhoto {
   width: 100%;
-  height: 54vh;
+  height: 350px;
   background-color: none;
   display: flex;
   justify-content: space-between;
@@ -192,12 +196,12 @@
   width: 100%;
   height: 100%;
   background-size: cover;
-  border-radius: 10px;
+  border-radius: 0 0 15px 15px;
 }
 
 .Main .MainBackGround .MainBG-Content .Profile {
   width: 100%;
-  height: 17vh;
+  height: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -351,7 +355,7 @@
 .Main .MainBackGround .MainBG-Content .Section {
   /* background-color: brown; */
   width: 100%;
-  height: 6.5vh;
+  height: 42px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -360,7 +364,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem1 {
   background-color: white;
   width: 80px;
-  height: 55px;
+  height: 40px;
   border-radius: 5%;
   border: none;
   display: flex;
@@ -387,7 +391,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem2 {
   background-color: white;
   width: 90px;
-  height: 55px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -403,7 +407,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem3 {
   background-color: white;
   width: 80px;
-  height: 55px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -418,7 +422,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem4 {
   background-color: white;
   width: 60px;
-  height: 55px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -433,7 +437,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem5 {
   background-color: white;
   width: 65px;
-  height: 55px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -448,7 +452,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem6 {
   background-color: white;
   width: 65px;
-  height: 55px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -463,7 +467,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem7 {
   background-color: white;
   width: 95px;
-  height: 55px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -817,6 +821,7 @@
 .Main .MainContent .MC-MyProfile .PerLib .PerLibPho .PerLibPhoGrid {
   background-color: white;
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(
     3,
     1fr

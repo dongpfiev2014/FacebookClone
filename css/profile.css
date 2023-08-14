@@ -12,7 +12,9 @@
   justify-content: space-between;
   align-items: center;
   font-family: "Roboto", sans-serif;
-  position: fixed;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header .Left-Header {

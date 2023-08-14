@@ -533,6 +533,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
   margin: 20px 15px;
 }
 
@@ -579,18 +580,18 @@
   .PerLibIntro
   .SavedAllBio
   .ModifiedBio {
-  width: 440px;
+  background-color: #e4e6eb;
+  width: 100%;
   height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin-top: 10px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
   font-weight: bold;
   font-size: 14px;
-  background-color: #e4e6eb;
 }
 .Main .MainContent .MC-MyProfile .PerLib .PerLibIntro .SavedHobby {
   background-color: none;
@@ -699,7 +700,6 @@
   cursor: pointer;
   font-weight: bold;
   font-size: 14px;
-  transition: all 0.2s linear;
 }
 
 .Main

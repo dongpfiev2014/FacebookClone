@@ -142,7 +142,7 @@
 .Main .MainBackGround {
   /* background-color: yellow; */
   width: 100%;
-  height: 500px;
+  height: 690px;
   display: flex;
 }
 
@@ -175,7 +175,7 @@
 
 .Main .MainBackGround .MainBG-Content .CoverPhoto {
   width: 100%;
-  height: 350px;
+  height: 68%;
   background-color: none;
   display: flex;
   justify-content: space-between;
@@ -201,7 +201,7 @@
 
 .Main .MainBackGround .MainBG-Content .Profile {
   width: 100%;
-  height: 110px;
+  height: 23.5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,7 +250,7 @@
   border-radius: 50%;
 }
 .Main .MainBackGround .MainBG-Content .Profile .FullName .light-text {
-  color: #6e7074;
+  color: #848a96;
   margin-bottom: 8px;
 }
 
@@ -298,6 +298,7 @@
   background-color: none;
   width: 32%;
   height: 100%;
+  padding-right: 35px;
   display: flex;
   margin-right: 0 10px;
   flex-direction: row;
@@ -305,6 +306,7 @@
   align-items: center;
   flex-wrap: wrap;
   align-content: center;
+  gap: 5px;
 }
 
 .Main .MainBackGround .MainBG-Content .Profile .AddMess .AddFri {
@@ -317,7 +319,7 @@
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  margin-right: 5px;
+  /* margin-right: 5px; */
 }
 .Main .MainBackGround .MainBG-Content .Profile .AddMess .Message {
   background-color: #e4e6eb;
@@ -328,7 +330,7 @@
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  margin-right: 35px;
+  /* margin-right: 35px; */
 }
 .Main .MainBackGround .MainBG-Content .Profile .AddMess .expandBut {
   background-color: #e4e6eb;
@@ -341,12 +343,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 35px;
-  margin-top: 10px;
+  /* margin-right: 35px; */
+  /* margin-top: 10px; */
 }
 
 .custom-hr {
-  width: 94%; /* Chiều rộng của dấu gạch ngang */
+  width: 94.5%; /* Chiều rộng của dấu gạch ngang */
   height: 1px; /* Độ dày của dấu gạch ngang */
   background-color: #e4e6eb; /* Màu nền của dấu gạch ngang */
   margin: 0 auto; /* Căn giữa ngang */
@@ -355,16 +357,16 @@
 .Main .MainBackGround .MainBG-Content .Section {
   /* background-color: brown; */
   width: 100%;
-  height: 42px;
+  height: 8%;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 }
 
 .Main .MainBackGround .MainBG-Content .Section .SecItem1 {
   background-color: white;
   width: 80px;
-  height: 40px;
+  height: 100%;
   border-radius: 5%;
   border: none;
   display: flex;
@@ -381,7 +383,7 @@
 
 .customSI-hr {
   position: absolute;
-  bottom: -4px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   height: 5px;
@@ -391,7 +393,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem2 {
   background-color: white;
   width: 90px;
-  height: 40px;
+  height: 90%;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -407,7 +409,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem3 {
   background-color: white;
   width: 80px;
-  height: 40px;
+  height: 90%;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -422,7 +424,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem4 {
   background-color: white;
   width: 60px;
-  height: 40px;
+  height: 90%;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -437,7 +439,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem5 {
   background-color: white;
   width: 65px;
-  height: 40px;
+  height: 90%;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -452,7 +454,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem6 {
   background-color: white;
   width: 65px;
-  height: 40px;
+  height: 90%;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -466,8 +468,8 @@
 }
 .Main .MainBackGround .MainBG-Content .Section .SecItem7 {
   background-color: white;
-  width: 95px;
-  height: 40px;
+  width: 100px;
+  height: 90%;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -482,7 +484,7 @@
 .Main .MainBackGround .MainBG-Content .Section .SecItem8 {
   background-color: #e4e6eb;
   width: 50px;
-  height: 35px;
+  height: 90%;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -523,13 +525,14 @@
   /* background-color: yellow; */
   width: 40%;
   height: 100%;
+  /* margin-bottom: 20px; */
   /* margin: 20px 0 0 0; */
 }
 
 .Main .MainContent .MC-MyProfile .PerLib .PerLibIntro {
   background-color: white;
   border-radius: 10px;
-  /* margin-top: 20px; */
+  margin-bottom: 18px;
   /* display: flex;
   justify-content: start;
   align-items: center; */
@@ -728,8 +731,8 @@
 
 .Main .MainContent .MC-MyProfile .PerLib .PerLibIntro .SavedStory {
   /* background-color: green; */
-  height: 35vh;
-  margin: 20px 10px;
+  height: 280px;
+  margin: 0px 15px;
   padding: 0px 0 20px 5px;
   display: flex;
   flex-direction: column;
@@ -756,6 +759,7 @@
   height: 250px; /* Chiều cao của mỗi story */
   /* background-color: lightgray; */
   margin-right: 10px; /* Khoảng cách giữa các story */
+  /* overflow: hidden; */
 }
 
 .Story1 img,
@@ -771,7 +775,7 @@
 .Story1:hover img,
 .Story2:hover img,
 .Story3:hover img {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .StoryListTit {
@@ -780,6 +784,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 13px;
+}
+.Main .MainContent .MC-MyProfile .PerLib .PerLibIntro .MSS-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 15px;
 }
 
 .Main
@@ -787,15 +799,15 @@
   .MC-MyProfile
   .PerLib
   .PerLibIntro
-  .SavedStory
+  .MSS-Container
   .ModifiedSavedStory {
   background-color: #e4e6eb;
-  width: 440px;
+  width: 100%;
   height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 35px;
+  margin-bottom: 20px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -844,13 +856,13 @@
   img {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
   transition: transform 0.3s;
   border-radius: 10px;
 }
 
 .grid-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .Main .MainContent .MC-MyProfile .Content {

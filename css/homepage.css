@@ -493,3 +493,41 @@ nav{
     background: transparent;
     border-radius: 4px;
 }
+
+.post-img-modal{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+}
+
+.post-img-modal-inner{
+    width: 80%;
+    position: relative;
+    top: 20%;
+    margin:  auto;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: modalShow 0.2s linear;
+    display: flex;
+}
+.post-img-modal-left {
+    flex-basis: 75%;
+}
+
+.post-img-modal-right {
+    flex-basis: 25%;
+}
+
+.post-img-modal-left img{
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+.hide{
+    display: none;
+}

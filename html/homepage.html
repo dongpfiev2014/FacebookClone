@@ -6,9 +6,21 @@
     <title>Facebook Clone - Nhom 3</title>
     <link rel="stylesheet" href="/Team3-ClassC4EJS141/css/homepage.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="/Team3-ClassC4EJS141/js/homepage.js" defer></script>
 
 </head>
 <body>
+    <div class="post-img-modal hide">
+        <div class="post-img-modal-inner">
+            <div class="post-img-modal-left">
+                <img src="/Team3-ClassC4EJS141/images/vu.dd/feed-image-1.png">
+            </div>
+            <div class="post-img-modal-right">
+                hello
+            </div>
+        </div>
+        
+    </div>
 
     <!--Navbar Menu Start-->
     <nav>
@@ -24,6 +36,13 @@
                 <input type="text" placeholder="Search">
             </div>
             
+        </div>
+        <div class="nav-mid">
+            <div class="nav-mid-item"><a href=""><i class='bx bx-home-smile' ></i></a></div>
+            <div class="nav-mid-item"><a href=""><i class='bx bx-tv' ></i></a></div>
+            <div class="nav-mid-item"><a href=""><i class='bx bx-store' ></i></a></div>
+            <div class="nav-mid-item"><a href=""><i class='bx bx-group' ></i></a></div>
+            <div class="nav-mid-item"><a href=""><i class='bx bx-home-smile' ></i></a></div>
         </div>
         <div class="nav-right">
             <!-- <div class="search-box">
@@ -86,7 +105,7 @@
             <div class="write-post-container">
                 <div class="user-profile">
                     <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
-                    <div>
+                    <div class="text">
                         <p>Duong Dinh Vu</p>
                         <small>Public <i class='bx bxs-down-arrow'></i></small>
                     </div>
@@ -101,84 +120,83 @@
                 </div>
             </div>
             <div class="post-container">
-                <div class="user-profile">
-                    <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
-                    <div>
-                        <p>Duong Dinh Vu</p>
-                        <span>August 4 2023, 10:40</span>
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
+                        <div>
+                            <p>Duong Dinh Vu</p>
+                            <span>August 4 2023, 10:40</span>
+                        </div>
                     </div>
+                    <a href="#"><i class='bx bx-edit-alt'></i></a>
                 </div>
                 <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam aut itaque, nobis debitis harum consequatur dolores sunt repudiandae, temporibus, a facilis totam quam facere. Blanditiis maiores molestiae neque quis? <a href="#">Hello</a></p>
-                <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad voluptatem totam quis, illo maxime cupiditate necessitatibus esse eaque autem, iusto facilis minus quam? Illo iusto facere odit et, recusandae pariatur!</p>
+                <img src="/Team3-ClassC4EJS141/images/vu.dd/feed-image-1.png" class="post-img" id="img1">
+                
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="/Team3-ClassC4EJS141/images/vu.dd/like-blue.png">120</div>
+                        <div><img src="/Team3-ClassC4EJS141/images/vu.dd/comments.png">120</div>
+                        <div><img src="/Team3-ClassC4EJS141/images/vu.dd/share.png"></div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
+                        <i class='bx bxs-down-arrow'></i>
+                    </div>
+                </div>
             </div>
             <div class="post-container">
-                <div class="user-profile">
-                    <img src="/Team3-ClassC4EJS141/images/vu.dd/member-1.png">
-                    <div>
-                        <p>Duong Dinh Vu</p>
-                        <span>August 4 2023, 10:40</span>
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png" id="img1">
+                        <div>
+                            <p>Duong Dinh Vu</p>
+                            <span>August 4 2023, 10:40</span>
+                        </div>
                     </div>
+                    <a href="#"><i class='bx bx-edit-alt'></i></a>
                 </div>
                 <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam aut itaque, nobis debitis harum consequatur dolores sunt repudiandae, temporibus, a facilis totam quam facere. Blanditiis maiores molestiae neque quis? <a href="#">Hello</a></p>
-                <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad voluptatem totam quis, illo maxime cupiditate necessitatibus esse eaque autem, iusto facilis minus quam? Illo iusto facere odit et, recusandae pariatur!</p>
+                <img src="/Team3-ClassC4EJS141/images/vu.dd/feed-image-3.png" class="post-img">
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="/Team3-ClassC4EJS141/images/vu.dd/like-blue.png">120</div>
+                        <div><img src="/Team3-ClassC4EJS141/images/vu.dd/comments.png">120</div>
+                        <div><img src="/Team3-ClassC4EJS141/images/vu.dd/share.png"></div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
+                        <i class='bx bxs-down-arrow'></i>
+                    </div>
+                </div>
             </div>
             <div class="post-container">
-                <div class="user-profile">
-                    <img src="/Team3-ClassC4EJS141/images/vu.dd/member-2.png">
-                    <div>
-                        <p>Duong Dinh Vu</p>
-                        <span>August 4 2023, 10:40</span>
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
+                        <div>
+                            <p>Duong Dinh Vu</p>
+                            <span>August 4 2023, 10:40</span>
+                        </div>
                     </div>
+                    <a href="#"><i class='bx bx-edit-alt'></i></a>
                 </div>
                 <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam aut itaque, nobis debitis harum consequatur dolores sunt repudiandae, temporibus, a facilis totam quam facere. Blanditiis maiores molestiae neque quis? <a href="#">Hello</a></p>
-                <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad voluptatem totam quis, illo maxime cupiditate necessitatibus esse eaque autem, iusto facilis minus quam? Illo iusto facere odit et, recusandae pariatur!</p>
-            </div>
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="/Team3-ClassC4EJS141/images/vu.dd/member-3.png">
-                    <div>
-                        <p>Duong Dinh Vu</p>
-                        <span>August 4 2023, 10:40</span>
+                <img src="/Team3-ClassC4EJS141/images/vu.dd/feed-image-2.png" class="post-img">
+                <div class="post-row">
+                    <div class="activity-icons">
+                        <div><img src="/Team3-ClassC4EJS141/images/vu.dd/like-blue.png">120</div>
+                        <div><img src="/Team3-ClassC4EJS141/images/vu.dd/comments.png">120</div>
+                        <div><img src="/Team3-ClassC4EJS141/images/vu.dd/share.png"></div>
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
+                        <i class='bx bxs-down-arrow'></i>
                     </div>
                 </div>
-                <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam aut itaque, nobis debitis harum consequatur dolores sunt repudiandae, temporibus, a facilis totam quam facere. Blanditiis maiores molestiae neque quis? <a href="#">Hello</a></p>
-                <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad voluptatem totam quis, illo maxime cupiditate necessitatibus esse eaque autem, iusto facilis minus quam? Illo iusto facere odit et, recusandae pariatur!</p>
-            </div>
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="/Team3-ClassC4EJS141/images/vu.dd/member-4.png">
-                    <div>
-                        <p>Duong Dinh Vu</p>
-                        <span>August 4 2023, 10:40</span>
-                    </div>
-                </div>
-                <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam aut itaque, nobis debitis harum consequatur dolores sunt repudiandae, temporibus, a facilis totam quam facere. Blanditiis maiores molestiae neque quis? <a href="#">Hello</a></p>
-                <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad voluptatem totam quis, illo maxime cupiditate necessitatibus esse eaque autem, iusto facilis minus quam? Illo iusto facere odit et, recusandae pariatur!</p>
-            </div>
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="/Team3-ClassC4EJS141/images/vu.dd/member-5.png">
-                    <div>
-                        <p>Duong Dinh Vu</p>
-                        <span>August 4 2023, 10:40</span>
-                    </div>
-                </div>
-                <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam aut itaque, nobis debitis harum consequatur dolores sunt repudiandae, temporibus, a facilis totam quam facere. Blanditiis maiores molestiae neque quis? <a href="#">Hello</a></p>
-                <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad voluptatem totam quis, illo maxime cupiditate necessitatibus esse eaque autem, iusto facilis minus quam? Illo iusto facere odit et, recusandae pariatur!</p>
-            </div>
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="/Team3-ClassC4EJS141/images/vu.dd/member-6.png">
-                    <div>
-                        <p>Duong Dinh Vu</p>
-                        <span>August 4 2023, 10:40</span>
-                    </div>
-                </div>
-                <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laboriosam aut itaque, nobis debitis harum consequatur dolores sunt repudiandae, temporibus, a facilis totam quam facere. Blanditiis maiores molestiae neque quis? <a href="#">Hello</a></p>
-                <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad voluptatem totam quis, illo maxime cupiditate necessitatibus esse eaque autem, iusto facilis minus quam? Illo iusto facere odit et, recusandae pariatur!</p>
             </div>
 
-
+            <button type="button" class="load-more-btn" id="btn-1">Load More</button>
         </div>
 
         <!--Right Sidebar-->

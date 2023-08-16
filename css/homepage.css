@@ -17,9 +17,12 @@ nav{
     justify-content: space-between;
     background: #1879f2;
     padding: 5px 5%;
+    /* height: 76px; */
     position: sticky;
     top: 0;
     z-index: 100;
+    display: flex;
+
 }
 .logo{
     width: 40px;
@@ -28,6 +31,30 @@ nav{
 .nav-left, .nav-right{
     display: flex;
     align-items: center;
+    flex: 25%;
+}
+.nav-mid{
+    display: flex;
+    flex-basis: 47%;
+    align-items: center;
+    
+}
+.nav-mid-item{
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.nav-mid-item a{
+    text-decoration: none;
+    object-fit: cover;
+}
+.nav-mid-item a i{
+    font-size: 30px;
+}
+
+.nav-mid-item:hover{
+    background: lightgray;
 }
 /* .nav-left ul li{
     list-style: none;
@@ -107,7 +134,7 @@ nav{
 
 .left-sidebar{
     /* background-color: #cbdffa; */
-    flex-basis: 20%;
+    flex-basis: 25%;
     position: sticky;
     top: 70px;
     align-self: flex-start;
@@ -128,7 +155,7 @@ nav{
 }
 
 .main-content{
-    flex-basis: 52%;
+    flex-basis: 47%;
 
 }
 
@@ -358,6 +385,7 @@ nav{
 
 }
 
+
 .post-input-container textarea{
     width: 100%;
     border: 0;
@@ -399,6 +427,7 @@ nav{
 
 .user-profile span{
     font-size: 13px;
+    
     color: #9a9a9a;
 }
 
@@ -409,4 +438,96 @@ nav{
 
 }
 
+/* .post-text span{
+    color: #626262;
+    font-weight: 500;
+} */
 
+.post-text a{
+   color: #1876f2;
+   text-decoration: none; 
+}
+
+
+.post-img{
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.post-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between  ;
+}
+
+.activity-icons div{
+    display: inline-block;
+    align-items: center;
+    margin-right: 30px ;
+}
+
+.activity-icons div img{
+    width: 18px;
+    margin-right: 10px;
+}
+
+.post-profile-icon{
+    display: flex;
+    align-items: center;
+}
+
+.post-profile-icon img{
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.load-more-btn{
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid black;
+    color: #626262;
+    background: transparent;
+    border-radius: 4px;
+}
+
+.post-img-modal{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+}
+
+.post-img-modal-inner{
+    width: 80%;
+    position: relative;
+    top: 20%;
+    margin:  auto;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: modalShow 0.2s linear;
+    display: flex;
+}
+.post-img-modal-left {
+    flex-basis: 75%;
+}
+
+.post-img-modal-right {
+    flex-basis: 25%;
+}
+
+.post-img-modal-left img{
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+.hide{
+    display: none;
+}

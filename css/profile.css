@@ -1194,7 +1194,7 @@
 }
 
 .Main .MC-MyProfile .Content .ConMyPosts-1 {
-  background-color: orange;
+  background-color: white;
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -1328,7 +1328,7 @@
 }
 
 .Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Content {
-  background-color: #7a6e6e;
+  /* background-color: #7a6e6e; */
   margin: 10px 0;
   display: flex;
   flex-direction: column;
@@ -1340,7 +1340,7 @@
   .ConMyPosts-1
   .ConMyPosts-1-Content
   .ConMyPosts-1-Content-Para {
-  background-color: wheat;
+  /* background-color: wheat; */
   font-weight: normal;
   font-size: 15px;
   display: flex;
@@ -1376,7 +1376,7 @@
   .ConMyPosts-1
   .ConMyPosts-1-Content
   .ConMyPosts-1-Content-Media {
-  background-color: purple;
+  /* background-color: purple; */
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -1396,6 +1396,7 @@
 
 .Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Com {
   /* background-color: aqua; */
+  margin-bottom: 10px;
 }
 
 .Main
@@ -1411,6 +1412,7 @@
   width: 100%;
   height: auto;
   padding-bottom: 10px;
+  margin-top: -5px;
 }
 .Main
   .MC-MyProfile
@@ -1450,7 +1452,7 @@
   .ConMyPosts-1-Com
   .ConMyPosts-1-Com-Rea
   .ConMyPosts-1-Com-Sum {
-  background-color: yellow;
+  /* background-color: yellow; */
   width: 100%;
   height: auto;
   display: flex;
@@ -1511,7 +1513,8 @@
   .ConMyPosts-1-Com
   .ConMyPosts-1-Com-Like
   .ConMyPosts-1-Com-But {
-  background-color: red;
+  background-color: white;
+  color: rgb(110, 99, 99);
   flex: 1;
   height: 40px;
   font-size: 14px;
@@ -1523,6 +1526,7 @@
   border-radius: 5px;
   border: none;
   transition: all 0.2s linear;
+  gap: 10px;
 }
 
 .Main
@@ -1541,11 +1545,12 @@
   .ConMyPosts-1
   .ConMyPosts-1-Com
   .ConMyPosts-1-Com-Comment {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
+  margin-top: 10px;
 }
 .Main
   .MC-MyProfile
@@ -1578,7 +1583,7 @@
   .ConMyPosts-1-Com
   .ConMyPosts-1-Com-Comment
   .comment-wrapper {
-  background-color: blue;
+  /* background-color: blue; */
   flex: 1;
   display: flex;
   justify-content: center;
@@ -1598,12 +1603,13 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: 45px;
   border-radius: 25px;
   border: none;
   outline: none;
   padding: 5px;
   position: relative;
-  transition: height 0.3s;
+  transition: height 0.4s;
   /* height: 200px; */
 }
 
@@ -1652,15 +1658,15 @@
 }
 
 #comment-box:focus {
-  border-color: blue;
-  box-shadow: 0 0 5px blue;
+  border-color: grey;
+  box-shadow: 0 0 5px gray;
   font-size: large;
   font-family: "Roboto", sans-serif;
   /* height: 100px; */
 }
 
 .expanded {
-  height: 100px;
+  height: 100px !important;
 }
 
 .hidden {
@@ -1674,4 +1680,209 @@
   cursor: pointer;
   left: 20px;
   bottom: 20px;
+}
+
+.Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Com .Box-Comment {
+  background-color: aqua;
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1 {
+  background-color: white;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  img {
+  background-color: black;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan {
+  /* background-color: red; */
+  font-size: 15px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo {
+  background-color: #e4e6eb;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Name {
+  /* background-color: #1b74e4; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Name
+  .BlueTick {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Comment {
+  /* background-color: #4d5258; */
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-React {
+  /* background-color: #1b74e4; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #42464d;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-Reply {
+  /* background-color: olive; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #42464d;
+  cursor: pointer;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-SumReact {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 20px;
+  border: none;
+  padding: 0 5px;
+  right: 0;
+  bottom: -10px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-SumReact
+  img {
+  width: 20px;
+  height: 20px;
+}
+
+.Main .MC-MyProfile .Content .ConMyPosts-1 .Post1-SeeAll {
+  width: 100%;
+  height: auto;
+}
+.Main .MC-MyProfile .Content .ConMyPosts-1 .Post1-SeeAll .SeeMore {
+  background-color: white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  font-size: 15px;
+  font-weight: bold;
+  color: #42464d;
+  border: none;
+  cursor: pointer;
 }

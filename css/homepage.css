@@ -527,7 +527,9 @@ nav{
     object-fit: cover;
     
 }
-
+.post-img-modal-right{
+    padding: 10px;
+}
 .hide{
     display: none;
 }

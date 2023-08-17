@@ -1616,10 +1616,10 @@
 #comment-box::placeholder {
   position: absolute;
   top: 50%;
-  left: 15%;
+  left: 11%;
   transform: translate(-50%, -50%);
   color: #7a6e6e;
-  font-size: large;
+  font-size: 15px;
   font-family: "Roboto", sans-serif;
 }
 .Main
@@ -1683,10 +1683,14 @@
 }
 
 .Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Com .Box-Comment {
-  background-color: aqua;
+  /* background-color: aqua; */
   width: 100%;
   height: auto;
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
 .Main
   .MC-MyProfile
@@ -1791,7 +1795,8 @@
   .User1-Pan
   .User1-PanCo
   .User1-Comment {
-  /* background-color: #4d5258; */
+  background-color: none;
+  white-space: pre-line;
 }
 .Main
   .MC-MyProfile
@@ -1811,7 +1816,7 @@
   font-weight: bold;
   color: #42464d;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .Main
@@ -1853,7 +1858,7 @@
   border-radius: 20px;
   border: none;
   padding: 0 5px;
-  right: 0;
+  right: -50px;
   bottom: -10px;
 }
 
@@ -1869,6 +1874,44 @@
   img {
   width: 20px;
   height: 20px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Edit {
+  background-color: white;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  right: -80px;
+  top: 5px;
+  font-weight: bold;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Edit:hover {
+  background-color: #e4e6eb;
 }
 
 .Main .MC-MyProfile .Content .ConMyPosts-1 .Post1-SeeAll {

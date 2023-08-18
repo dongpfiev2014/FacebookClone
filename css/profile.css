@@ -263,6 +263,7 @@
   /* display: flex;
   justify-content: space-between; */
   position: relative;
+  /* z-index: 1; */
 }
 
 .Main
@@ -280,6 +281,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  /* z-index: 0; */
 }
 
 .FN-Friends:nth-child(1) {
@@ -747,6 +749,7 @@
   /* width: 100%; Chiều rộng cố định của container */
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .StoryList {
@@ -1376,10 +1379,11 @@
   .ConMyPosts-1
   .ConMyPosts-1-Content
   .ConMyPosts-1-Content-Media {
-  /* background-color: purple; */
+  background-color: #749b4a;
   width: 100%;
   height: auto;
   overflow: hidden;
+  padding: 0 10%;
 }
 
 .Main
@@ -1929,4 +1933,201 @@
   color: #42464d;
   border: none;
   cursor: pointer;
+}
+
+.Message-Box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: white;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  transition: all 0.2s linear;
+}
+.Message-Box:hover {
+  background-color: #e4e6eb;
+}
+
+.User1-Edit-Del {
+  background-color: white;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s linear;
+  transform: scale(0);
+  height: 80px;
+  width: 200px;
+  transform-origin: top center;
+  right: -160px;
+  top: 35px;
+  /* top: calc(100% + 10px); */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5px 5px 5px 5px;
+  gap: 0px;
+  border-radius: 7%;
+}
+
+.User1-Edit-Del .User1-Edit-Del-CS,
+.User1-Edit-Del-X {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s linear;
+  padding: 5px;
+}
+
+.User1-Edit-Del-CS:hover,
+.User1-Edit-Del-X:hover {
+  background-color: #e4e6eb;
+}
+
+.style-edit-textarea {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  border: 1px solid #e4e6eb;
+  padding: 5px;
+  font-size: 15px;
+  outline: none;
+  margin-top: 5px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+.style-edit-savebutton {
+  background-color: gray;
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  right: 20px;
+  bottom: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+#modal-Del-Edit {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  display: none;
+}
+
+#modal-Del-Edit .modal-Del-Edit-wrapper {
+  background-color: white;
+  max-width: 550px;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* display: none; */
+}
+
+#modal-Del-Edit .modal-Del-Edit-wrapper .XoaBinhLuan {
+  flex: 1;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+}
+
+#ConfirmDelOval {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: #e4e6eb;
+  transition: all 0.2s linear;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#ConfirmDelOval:hover {
+  background-color: gray;
+}
+
+#modal-Del-Edit .modal-Del-Edit-wrapper .ConfirmXoaBinhLuan {
+  flex: 1;
+  /* background-color: brown; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: normal;
+  font-size: 15px;
+}
+#modal-Del-Edit .modal-Del-Edit-wrapper .YesNoBL {
+  flex: 1;
+  /* background-color: green; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: normal;
+  font-size: 15px;
+  gap: 5px;
+}
+
+#modal-Del-Edit .modal-Del-Edit-wrapper .YesNoBL #ConfirmNo {
+  width: 100px;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  border-radius: 5px;
+  color: #1b74e4;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  font-size: 15px;
+}
+#modal-Del-Edit .modal-Del-Edit-wrapper .YesNoBL #ConfirmYes {
+  width: 100px;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b74e4;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
 }

@@ -104,3 +104,111 @@ commentBox.addEventListener("keydown", function (event) {
     }
   }
 });
+
+//HIỂN THỊ BẢNG CHỈNH SỬA HOẶC XÓA BÌNH LUẬN
+
+const EditDelBut = document.getElementById("EditDelBut");
+const EditDelButPan = document.querySelectorAll(".User1-Edit-Del");
+
+function DisplayEditDel() {
+  EditDelButPan.forEach((x) => {
+    x.style.opacity = "1";
+    x.style.transform = "scale(1)";
+    y = false;
+  });
+}
+
+function HiddenEditDel() {
+  EditDelButPan.forEach((x) => {
+    x.style.opacity = "0";
+    x.style.transform = "scale(0)";
+    y = true;
+  });
+}
+let y = false;
+function CheckEditDel() {
+  EditDelBut.addEventListener("click", () => {
+    if (y) {
+      DisplayEditDel();
+    } else {
+      HiddenEditDel();
+    }
+  });
+}
+CheckEditDel();
+
+//EDIT BÌNH LUẬN KHI NHẤN NÚT CHỈNH SỬA
+
+const EditCommentButton = document.querySelectorAll(".User1-Edit-Del-CS");
+const DeleteCommentButton = document.querySelectorAll(".User1-Edit-Del-X");
+const comments = document.querySelectorAll(".User1-PanCo");
+
+// Xử lý sự kiện khi nhấn nút "Edit"
+EditCommentButton.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    HiddenEditDel();
+    const commentText =
+      comments[index].querySelector(".User1-Comment").textContent;
+
+    // Tạo element textarea và gán nội dung
+    const textarea = document.createElement("textarea");
+    textarea.value = commentText;
+    textarea.classList.add("style-edit-textarea");
+
+    // Thay thế phần tử .comment-text bằng textarea
+    const commentContainer = comments[index];
+    commentContainer.replaceChild(
+      textarea,
+      commentContainer.querySelector(".User1-Comment")
+    );
+
+    // Tạo nút "Save" để lưu chỉnh sửa
+    const saveButton = document.createElement("button");
+    saveButton.innerHTML = `<i class="fa-solid fa-play fa-lg"></i>`;
+    saveButton.style.fontWeight = "bold";
+    saveButton.classList.add("style-edit-savebutton");
+    commentContainer.appendChild(saveButton);
+
+    // Xử lý sự kiện khi nhấn nút "Save"
+    saveButton.addEventListener("click", () => {
+      const newText = textarea.value;
+      commentContainer.replaceChild(createCommentDiv(newText), textarea);
+      commentContainer.removeChild(saveButton);
+    });
+  });
+});
+
+// Xử lý sự kiện khi nhấn nút "Delete"
+const DeleteUserComments = document.querySelectorAll(".User1");
+const BtnConfirmDelete = document.getElementById("ConfirmYes");
+const ModalConfirmDelete = document.getElementById("modal-Del-Edit");
+const ConfirmNo = document.getElementById("ConfirmNo");
+const ConfirmYes = document.getElementById("ConfirmYes");
+const ConfirmDelOval = document.getElementById("ConfirmDelOval");
+
+DeleteCommentButton.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    ModalConfirmDelete.style.display = "flex";
+
+    ConfirmNo.addEventListener("click", () => {
+      ModalConfirmDelete.style.display = "none";
+    });
+    ConfirmDelOval.addEventListener("click", () => {
+      ModalConfirmDelete.style.display = "none";
+    });
+    DeleteUserComments.forEach((button, index) => {
+      ConfirmYes.addEventListener("click", () => {
+        DeleteUserComments[index].remove();
+        ModalConfirmDelete.style.display = "none";
+      });
+    });
+  });
+});
+
+// Tạo phần tử div cho bình luận
+function createCommentDiv(text) {
+  const div = document.createElement("div");
+  div.classList.add("User1-Comment");
+  div.textContent = text;
+  return div;
+}

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Facebook</title>
   <link rel="stylesheet" href="/Team3-ClassC4EJS141/css/profile.css" />
   <script src="/Team3-ClassC4EJS141/js/profile.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -147,27 +147,27 @@
               <p style="text-align: center; margin: 20px auto;">Welcome to the official page of Luka Modrić.</p>
               <hr class="customBio-hr" />
               <div class="bio1">
-                <i class="fa-solid fa-graduation-cap fa-lg" style="text-align: center;"></i>
+                <i class="fa-solid fa-graduation-cap fa-lg" style="text-align: center;color: gray;"></i>
                 <p style="margin-left: 11px;">Đã học tại THPT Phan Châu Trinh Đà Nẵng</p>
               </div>
               <div class="bio2">
-                <i class="fa-solid fa-house-chimney fa-lg" style="text-align: center;"></i>
+                <i class="fa-solid fa-house-chimney fa-lg" style="text-align: center;color: gray;"></i>
                 <p style="margin-left: 13px;">Sống tại</p>
                 <a style="font-weight: bold; margin-left: 4px;"
                   href="https://www.facebook.com/places/Hoat-dong-giai-tri-tai-Ha-Noi/106388046062960/">Hà Nội</a>
               </div>
               <div class="bio3">
-                <i class="fa-solid fa-location-dot fa-lg" style="padding-left: 4px;"></i>
+                <i class="fa-solid fa-location-dot fa-lg" style="padding-left: 4px; color: gray;"></i>
                 <p style="margin-left: 17px;">Đến từ</p>
                 <a style="font-weight: bold; margin-left: 4px;"
                   href="https://www.facebook.com/pages/V%C4%A9nh%20Ph%C3%BAc/110473805639090/">Vĩnh Phúc</a>
               </div>
               <div class="bio4">
-                <i class="fa-solid fa-heart fa-lg" style="padding-left: 2px;"></i>
+                <i class="fa-solid fa-heart fa-lg" style="padding-left: 2px;color: gray;"></i>
                 <p style="margin-left: 15px;">Độc thân</p>
               </div>
               <div class="bio5">
-                <i class="fa-solid fa-wifi fa-lg" style="text-align: center;"></i>
+                <i class="fa-solid fa-wifi fa-lg" style="text-align: center;color: gray;"></i>
                 <p style="margin-left: 10px;">Có</p>
                 <a style="font-weight: bold; margin-left: 4px;" href="">1669</a>
                 <p style="margin-left: 4px;">người theo dõi</p>
@@ -471,7 +471,11 @@
                         <img src="https://www.freeiconspng.com/thumbs/facebook-love-png/facebook-love-png-3.png" alt="">
                         <p style="margin-left: 5px;">69</p>
                       </div>
-                      <button class="User1-Edit">···</button>
+                      <button class="User1-Edit" id="EditDelBut">···</button>
+                      <div class="User1-Edit-Del">
+                        <button class="User1-Edit-Del-CS">Chỉnh sửa</button>
+                        <button class="User1-Edit-Del-X">Xóa</button>
+                      </div>
                     </div>
                     <div class="User1-React">
                       <div>Thích</div>
@@ -494,8 +498,24 @@
       </div>
 
     </div>
+    <div id="modal-Del-Edit">
+      <div class="modal-Del-Edit-wrapper">
+        <div class="XoaBinhLuan">
+          <p>Xóa bình luận ?</p>
+          <button id="ConfirmDelOval">X</button>
+        </div>
+        <hr class="customBio-hr" />
+        <div class="ConfirmXoaBinhLuan">Bạn có chắc chắn muốn xóa bình luận này không?</div>
+        <div class="YesNoBL">
+          <button id="ConfirmNo">Không</button>
+          <button id="ConfirmYes">Xóa</button>
+        </div>
+      </div>
+    </div>
   </main>
-
+  <div class="Message-Box">
+    <i class="fa-solid fa-pen-to-square fa-xl"></i>
+  </div>
 </body>
 
 </html>

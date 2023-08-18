@@ -1791,8 +1791,9 @@
   .User1-Pan
   .User1-PanCo
   .User1-Comment {
-  /* background-color: #4d5258; */
+  background-color: none;
 }
+
 .Main
   .MC-MyProfile
   .Content

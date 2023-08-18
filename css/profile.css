@@ -553,7 +553,7 @@
 }
 
 .customBio-hr {
-  width: 90%;
+  width: 100%;
   height: 1px;
   background-color: #f0f2f5;
   margin: 0 auto;
@@ -990,12 +990,13 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  padding: 0 15px;
 }
 .Main .MainContent .MC-MyProfile .Content .ConMinds .ConMindsPan {
   /* background-color: red; */
   width: 100%;
   height: 100%;
-  padding: 10px 10px;
+  padding: 10px 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -1010,8 +1011,8 @@
   .ConMindsPan
   .user-avatar
   img {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1025,8 +1026,10 @@
 .Main .MainContent .MC-MyProfile .Content .ConMinds .ConMindsPan .status-input {
   flex: 1;
   padding: 8px;
+  height: 45px;
   background-color: #e4e6eb;
-  border: 1px solid #ccc;
+  border: none;
+  outline: none;
   border-radius: 25px;
   resize: none;
   cursor: pointer;
@@ -1188,4 +1191,742 @@
   border: none;
   cursor: pointer;
   /* margin-top: 5px; */
+}
+
+.Main .MC-MyProfile .Content .ConMyPosts-1 {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 15px 15px;
+}
+.Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Header {
+  background-color: white;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Header
+  .ConMyPosts-1-Header-Left {
+  /* background-color: greenyellow; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Header
+  .ConMyPosts-1-Header-Left
+  img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Header
+  .ConMyPosts-1-Header-Left
+  .ConMyPosts-1-Header-Left-Name
+  .bold-text {
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Header
+  .ConMyPosts-1-Header-Left
+  .ConMyPosts-1-Header-Left-Name
+  .bold-text
+  .BlueTick {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Header
+  .ConMyPosts-1-Header-Left
+  .ConMyPosts-1-Header-Left-Name
+  .ConMyPosts-1-Header-Left-Name-Date {
+  font-weight: normal;
+  font-size: 13px;
+  color: rgb(117, 102, 102);
+  cursor: pointer;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Header
+  .ConMyPosts-1-Header-Right {
+  /* background-color: greenyellow; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  /* font-weight: bold;
+  font-size: 15px; */
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Header
+  .ConMyPosts-1-Header-Right
+  div {
+  /* background-color: red; */
+  width: 35px;
+  height: 35px;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Header
+  .ConMyPosts-1-Header-Right
+  div:hover {
+  background-color: #e4e6eb;
+}
+
+.Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Content {
+  /* background-color: #7a6e6e; */
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Content
+  .ConMyPosts-1-Content-Para {
+  /* background-color: wheat; */
+  font-weight: normal;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Content
+  .ConMyPosts-1-Content-Para
+  a,
+.hashtag {
+  color: rgb(0, 102, 255); /* Màu cho hashtag */
+  text-decoration: none; /* Loại bỏ gạch chân từ liên kết */
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Content
+  .ConMyPosts-1-Content-Para
+  a:hover,
+.hashtag:hover {
+  text-decoration: underline; /* Gạch chân khi di chuột qua */
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Content
+  .ConMyPosts-1-Content-Media {
+  /* background-color: purple; */
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Content
+  .ConMyPosts-1-Content-Media
+  img {
+  max-width: 100%; /* Giới hạn kích thước ảnh theo độ rộng */
+  height: 100%; /* Chiều cao tự động điều chỉnh */
+  object-fit: cover;
+}
+
+.Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Com {
+  /* background-color: aqua; */
+  margin-bottom: 10px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Rea {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  margin-top: -5px;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Rea
+  .ConMyPosts-1-Com-React {
+  background-color: white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: -5px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Rea
+  .ConMyPosts-1-Com-React
+  img,
+.ConMyPosts-1-Com-SumCom img,
+.ConMyPosts-1-Com-SumSha img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Rea
+  .ConMyPosts-1-Com-Sum {
+  /* background-color: yellow; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Rea
+  .ConMyPosts-1-Com-Sum
+  .ConMyPosts-1-Com-SumCom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Rea
+  .ConMyPosts-1-Com-Sum
+  .ConMyPosts-1-Com-SumSha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Like {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0px;
+  gap: 5px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Like
+  .ConMyPosts-1-Com-But {
+  background-color: white;
+  color: rgb(110, 99, 99);
+  flex: 1;
+  height: 40px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.2s linear;
+  gap: 10px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Like
+  .ConMyPosts-1-Com-But:hover {
+  background-color: #e4e6eb;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Comment {
+  /* background-color: blueviolet; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Comment
+  .comment-avatar {
+  /* width: 100%; */
+  display: flex;
+  height: auto;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Comment
+  .comment-avatar
+  img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Comment
+  .comment-wrapper {
+  /* background-color: blue; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Cần để làm việc với pseudo-elements */
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Comment
+  .comment-wrapper
+  #comment-box {
+  background-color: #e4e6eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  position: relative;
+  transition: height 0.4s;
+  /* height: 200px; */
+}
+
+#comment-box::placeholder {
+  position: absolute;
+  top: 50%;
+  left: 11%;
+  transform: translate(-50%, -50%);
+  color: #7a6e6e;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Comment
+  .comment-wrapper
+  #comment-icon {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .ConMyPosts-1-Com-Comment
+  .comment-wrapper
+  #comment-button {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  right: 20px;
+  bottom: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+#comment-button:hover {
+  background-color: gray;
+}
+
+#comment-box:focus {
+  border-color: grey;
+  box-shadow: 0 0 5px gray;
+  font-size: large;
+  font-family: "Roboto", sans-serif;
+  /* height: 100px; */
+}
+
+.expanded {
+  height: 100px !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.expanded-icon {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  left: 20px;
+  bottom: 20px;
+}
+
+.Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Com .Box-Comment {
+  /* background-color: aqua; */
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1 {
+  background-color: white;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  img {
+  background-color: black;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan {
+  /* background-color: red; */
+  font-size: 15px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo {
+  background-color: #e4e6eb;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Name {
+  /* background-color: #1b74e4; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Name
+  .BlueTick {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Comment {
+  background-color: none;
+  white-space: pre-line;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-React {
+  /* background-color: #1b74e4; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #42464d;
+  gap: 10px;
+  margin-top: 0px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-Reply {
+  /* background-color: olive; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #42464d;
+  cursor: pointer;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-SumReact {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 20px;
+  border: none;
+  padding: 0 5px;
+  right: -50px;
+  bottom: -10px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-SumReact
+  img {
+  width: 20px;
+  height: 20px;
+}
+
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Edit {
+  background-color: white;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  right: -80px;
+  top: 5px;
+  font-weight: bold;
+}
+.Main
+  .MC-MyProfile
+  .Content
+  .ConMyPosts-1
+  .ConMyPosts-1-Com
+  .Box-Comment
+  .User1
+  .User1-Pan
+  .User1-PanCo
+  .User1-Edit:hover {
+  background-color: #e4e6eb;
+}
+
+.Main .MC-MyProfile .Content .ConMyPosts-1 .Post1-SeeAll {
+  width: 100%;
+  height: auto;
+}
+.Main .MC-MyProfile .Content .ConMyPosts-1 .Post1-SeeAll .SeeMore {
+  background-color: white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  font-size: 15px;
+  font-weight: bold;
+  color: #42464d;
+  border: none;
+  cursor: pointer;
 }

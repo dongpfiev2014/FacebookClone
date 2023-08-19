@@ -1976,6 +1976,7 @@
   padding: 5px 5px 5px 5px;
   gap: 0px;
   border-radius: 7%;
+  z-index: 999;
 }
 
 .User1-Edit-Del .User1-Edit-Del-CS,

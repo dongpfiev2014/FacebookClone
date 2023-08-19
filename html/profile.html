@@ -450,7 +450,7 @@
                 </div>
               </div>
               <div class="Box-Comment">
-                <div class="User1">
+                <div id="Comment-0" class="User1">
                   <img src="../images/dong.km/Fri_5.jpg" alt="">
                   <div class="User1-Pan">
                     <div class="User1-PanCo">
@@ -471,10 +471,11 @@
                         <img src="https://www.freeiconspng.com/thumbs/facebook-love-png/facebook-love-png-3.png" alt="">
                         <p style="margin-left: 5px;">69</p>
                       </div>
-                      <button class="User1-Edit" id="EditDelBut">···</button>
-                      <div class="User1-Edit-Del">
-                        <button class="User1-Edit-Del-CS">Chỉnh sửa</button>
-                        <button class="User1-Edit-Del-X">Xóa</button>
+                      <button class="User1-Edit" onclick="clickEditDelBtn('Comment-0')">···</button>
+                      <div class="User1-Edit-Del" id="EditDelHolder">
+                        <button class="User1-Edit-Del-CS" onclick="editComment('Comment-0')">Chỉnh sửa</button>
+                        <button class="User1-Edit-Del-X" onclick="openConfirmModal('Comment-0')">Xóa</button>
+                        <input id="Flag" type="hidden" value="0" />
                       </div>
                     </div>
                     <div class="User1-React">
@@ -512,6 +513,8 @@
         </div>
       </div>
     </div>
+    <input id="NeedDeleteCommentId" type="hidden" value="" />
+    <input id="OpenHolderCommentId" type="hidden" value="" />
   </main>
   <div class="Message-Box">
     <i class="fa-solid fa-pen-to-square fa-xl"></i>

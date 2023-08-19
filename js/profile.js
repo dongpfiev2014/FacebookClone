@@ -132,57 +132,6 @@ function CheckEditDel() {
 
 CheckEditDel();
 
-// Đoạn mã để hiển thị hoặc ẩn bảng chỉnh sửa hoặc xóa
-
-// function DisplayEditDel(editDelButPan) {
-//   editDelButPan.style.opacity = "1";
-//   editDelButPan.style.transform = "scale(1)";
-// }
-
-// function HiddenEditDel(editDelButPan) {
-//   editDelButPan.style.opacity = "0";
-//   editDelButPan.style.transform = "scale(0)";
-// }
-
-// // Hàm xử lý sự kiện click nút chỉnh sửa
-// function handleEditClick(event) {
-//   const editDelButPan = event.target.nextElementSibling;
-//   if (y) {
-//     DisplayEditDel(editDelButPan);
-//   } else {
-//     HiddenEditDel(editDelButPan);
-//   }
-//   y = !y;
-// }
-
-// let y = true;
-
-// // Thêm sự kiện click cho các nút chỉnh sửa ban đầu
-// const EditDelBut = document.querySelectorAll(".User1-Edit");
-// EditDelBut.forEach((button) => {
-//   button.addEventListener("click", handleEditClick);
-// });
-
-// // Thêm sự kiện MutationObserver để theo dõi thay đổi trong DOM
-// const observer = new MutationObserver((mutationsList) => {
-//   for (const mutation of mutationsList) {
-//     if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-//       // Nếu có thay đổi trong DOM và có các node mới được thêm vào
-//       // Thêm sự kiện click cho các nút chỉnh sửa trên các comment mới
-//       const newEditDelBut =
-//         mutation.addedNodes[0].querySelectorAll(".User1-Edit");
-//       newEditDelBut.forEach((button) => {
-//         button.addEventListener("click", handleEditClick);
-//       });
-//     }
-//   }
-// });
-
-// // Bắt đầu theo dõi một phần của DOM mà bạn muốn
-// const targetNode = document.body; // Thay đổi để phù hợp với DOM thực tế của bạn
-// const config = { childList: true, subtree: true };
-// observer.observe(targetNode, config);
-
 //EDIT BÌNH LUẬN KHI NHẤN NÚT CHỈNH SỬA
 
 const EditCommentButton = document.querySelectorAll(".User1-Edit-Del-CS");
@@ -216,10 +165,21 @@ EditCommentButton.forEach((button, index) => {
     commentContainer.appendChild(saveButton);
 
     // Xử lý sự kiện khi nhấn nút "Save"
-    saveButton.addEventListener("click", () => {
+    function AddEditedTextToCom() {
       const newText = textarea.value;
       commentContainer.replaceChild(createCommentDiv(newText), textarea);
       commentContainer.removeChild(saveButton);
+    }
+    saveButton.addEventListener("click", () => {
+      AddEditedTextToCom();
+    });
+    // Thay đổi sự kiện keydown trên textarea
+    textarea.addEventListener("keydown", (event) => {
+      if (event.keyCode === 13 && !event.shiftKey && !event.altKey) {
+        // Ngăn chặn hành vi mặc định của nút Enter (chuyển dòng) khi không có Shift hoặc Alt
+        event.preventDefault();
+        AddEditedTextToCom();
+      }
     });
   });
 });
@@ -258,3 +218,12 @@ function createCommentDiv(text) {
   div.textContent = text;
   return div;
 }
+
+//TẠO MODAL POST BÀI VIẾT CÁ NHÂN
+
+const StatusButton = document.getElementById("status-input-id");
+const ModalStatusButton = document.getElementById("StatusPanelWrapper");
+
+StatusButton.addEventListener("click", () => {
+  ModalStatusButton.style.display = "flex";
+});

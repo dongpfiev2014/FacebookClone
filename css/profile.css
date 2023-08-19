@@ -1203,6 +1203,7 @@
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 15px 15px;
+  /* transform: scale(1.5); */
 }
 .Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Header {
   background-color: white;
@@ -1863,7 +1864,7 @@
   border-radius: 20px;
   border: none;
   padding: 0 5px;
-  right: -50px;
+  right: -65px;
   bottom: -10px;
 }
 
@@ -2020,8 +2021,8 @@
   position: absolute;
   border: none;
   cursor: pointer;
-  right: 20px;
-  bottom: 5px;
+  right: 5px;
+  bottom: 0px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -2130,4 +2131,206 @@
   cursor: pointer;
   border: none;
   font-size: 15px;
+}
+
+#StatusPanelWrapper {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  display: none;
+}
+#StatusPanelWrapper .StatusPanel {
+  background-color: white;
+  max-width: 500px;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px 10px 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* display: none; */
+}
+
+#StatusPanelWrapper .StatusPanel .CreatePostTit {
+  /* background-color: wheat; */
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+}
+
+#StatusPanelWrapper .StatusPanel .CreatePostContent {
+  /* background-color: #1b74e4; */
+  width: 100%;
+  height: 55%;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#StatusPanelWrapper .StatusPanel .CreatePostContent .CreatePostContentImage {
+  background-color: white;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  gap: 5px;
+}
+#StatusPanelWrapper
+  .StatusPanel
+  .CreatePostContent
+  .CreatePostContentImage
+  img {
+  background-color: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #e4e6eb;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: all 0.2s linear;
+  object-fit: cover;
+}
+
+#StatusPanelWrapper
+  .StatusPanel
+  .CreatePostContent
+  .CreatePostContentImage
+  div {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+#StatusPanelWrapper
+  .StatusPanel
+  .CreatePostContent
+  .CreatePostContentImage
+  div
+  p {
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+
+#StatusPanelWrapper
+  .StatusPanel
+  .CreatePostContent
+  .CreatePostContentImage
+  div
+  button {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #e4e6eb;
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  padding-left: 10px;
+  position: relative;
+}
+
+#StatusPanelWrapper .StatusPanel .CreatePostContent .CreatePostContentInput {
+  /* position: relative; */
+  /* background-color: crimson; */
+  width: 100%;
+  height: 70%;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  position: relative;
+}
+
+#StatusPanelWrapper
+  .StatusPanel
+  .CreatePostContent
+  .CreatePostContentInput
+  textarea {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  position: absolute;
+}
+#StatusPanelWrapper
+  .StatusPanel
+  .CreatePostContent
+  .CreatePostContentInput
+  textarea::placeholder {
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+#StatusPanelWrapper .StatusPanel .CreatePostMedia {
+  display: flex;
+  width: 100%;
+  height: 15%;
+  border: 1px solid rgb(216, 206, 206);
+  border-radius: 15px;
+  gap: 0px;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#StatusPanelWrapper .StatusPanel .CreatePostMedia img {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 15px;
+  /* border: 1px solid black; */
+  background-size: cover;
+  object-fit: cover;
+}
+#StatusPanelWrapper .StatusPanel .CreatePostMedia button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  border: none;
+  border-radius: 25px;
+  background-color: white;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+#StatusPanelWrapper .StatusPanel .CreatePostConfirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  border-radius: 25px;
+  border: none;
+  background-color: rgb(194, 188, 188);
+  color: gray;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-top: 15px;
 }

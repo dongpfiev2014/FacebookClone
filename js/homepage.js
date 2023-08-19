@@ -63,7 +63,7 @@ btnWritePost.addEventListener('click', ()=>{
              <div class="post-new-feed-main">
                 <textarea name="" id="new-feed-text" placeholder="What do you think?"></textarea>
                 <input type="text" name="" id="new-feed-text">
-                <input type="file">
+                <input type="file" id="file">
              </div>
              <div class="post-new-feed-footer">
                  <button id="btn-post">Post</button>
@@ -71,16 +71,29 @@ btnWritePost.addEventListener('click', ()=>{
         </div>
     </div>`
     body.appendChild(divNewPost)
-    // toggleModalNewPost()
+    console.log(divNewPost)
     const btnPost = document.getElementById('btn-post')
-    // console.log(btnPost)
+    const imgURL = ''
+    const inputFile = document.getElementById("file")
+    inputFile.addEventListener('change', (e)=>{
+        const file = e.currentTarget.files[0]
+        console.log(e.currentTarget.files[0])
+        let reader = new FileReader();
+        reader.onloadend = function () {
+            
+            localStorage.setItem("post-image", reader.result);
+        };
+        reader.readAsDataURL(file);
+    })
+    console.log(inputFile)
+    console.log(imgURL)
     btnPost.addEventListener('click', ()=>{
         const newFeedText = document.getElementById('new-feed-text').value
         const div = document.createElement('div')
         div.innerHTML = `
         <div class="post-container">
             <div class="post-row">
-                    <div class="user-profile">
+                       <div class="user-profile">
                         <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
                         <div>
                             <p>Duong Dinh Vu</p>
@@ -90,7 +103,7 @@ btnWritePost.addEventListener('click', ()=>{
                     <a href="#"><i class='bx bx-edit-alt'></i></a>
             </div>
             <p class="post-text" id="feed-1">${newFeedText}</p>
-            <img src="/Team3-ClassC4EJS141/images/vu.dd/feed-image-1.png" class="post-img" feed_numb="feed-1">
+            <img src="${localStorage.getItem("post-image")}" class="post-img" feed_numb="feed-1">
             <div class="post-row">
                 <div class="activity-icons">
                     <div><img src="/Team3-ClassC4EJS141/images/vu.dd/like-blue.png">120</div>

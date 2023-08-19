@@ -557,8 +557,8 @@ nav{
 }
 
 .post-new-feed-inner{
-    width: 20%;
-    height: 500px;
+    width: 40%;
+    /* height: 500px; */
     position: relative;
     top: 20%;
     margin:  auto;
@@ -605,7 +605,7 @@ nav{
 .post-new-feed-footer button{
     width: 100%;
     padding: 10px 20px;
-    border: none;
-    
+    border: none;  
     border-radius: 5px;
+    background: lightblue;
 }

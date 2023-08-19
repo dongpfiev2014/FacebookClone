@@ -4,12 +4,12 @@ const body = document.getElementById('body')
 const div = document.getElementById('img-modal')
 
 const imgShow = document.querySelectorAll('.post-img')
-console.log(imgShow)
+// console.log(imgShow)
 
 function  toggleModalImage (){
     imageModal.classList.toggle('hide')
 }
-console.log(imgShow)
+// console.log(imgShow)
 
 
 imgShow.forEach((img) => {
@@ -53,52 +53,65 @@ function toggleModalNewPost (){
 }
 
 btnWritePost.addEventListener('click', ()=>{
-    toggleModalNewPost()
-    
+    const divNewPost = document.createElement('div')
+    divNewPost.innerHTML = ` 
+    <div class="post-new-feed">
+        <div class="post-new-feed-inner">
+            <div class="post-new-feed-header">
+                <h4>Creat New Feed</h4>
+             </div>
+             <div class="post-new-feed-main">
+                <textarea name="" id="new-feed-text" placeholder="What do you think?"></textarea>
+                <input type="text" name="" id="new-feed-text">
+                <input type="file">
+             </div>
+             <div class="post-new-feed-footer">
+                 <button id="btn-post">Post</button>
+             </div>
+        </div>
+    </div>`
+    body.appendChild(divNewPost)
+    // toggleModalNewPost()
     const btnPost = document.getElementById('btn-post')
     // console.log(btnPost)
     btnPost.addEventListener('click', ()=>{
         const newFeedText = document.getElementById('new-feed-text').value
         const div = document.createElement('div')
-        div.innerHTML = `<div class="post-container">
-         <div class="post-row">
-        <div class="user-profile">
-            <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
-            <div>
-                <p>Duong Dinh Vu</p>
-                <span>August 4 2023, 10:40</span>
+        div.innerHTML = `
+        <div class="post-container">
+            <div class="post-row">
+                    <div class="user-profile">
+                        <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
+                        <div>
+                            <p>Duong Dinh Vu</p>
+                            <span>August 4 2023, 10:40</span>
+                        </div>
+                    </div>
+                    <a href="#"><i class='bx bx-edit-alt'></i></a>
             </div>
-        </div>
-        <a href="#"><i class='bx bx-edit-alt'></i></a>
-    </div>
-    <p class="post-text" id="feed-1">${newFeedText}</p>
-    <img src="/Team3-ClassC4EJS141/images/vu.dd/feed-image-1.png" class="post-img" feed_numb="feed-1">
-    
-    <div class="post-row">
-        <div class="activity-icons">
-            <div><img src="/Team3-ClassC4EJS141/images/vu.dd/like-blue.png">120</div>
-            <div><img src="/Team3-ClassC4EJS141/images/vu.dd/comments.png">120</div>
-            <div><img src="/Team3-ClassC4EJS141/images/vu.dd/share.png"></div>
-        </div>
-        <div class="post-profile-icon">
-            <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
-            <i class='bx bxs-down-arrow'></i>
-        </div>
-    </div>
-    </div>`
-        console.log(newFeedText)
-        newPostModal.classList.add('hide')
+            <p class="post-text" id="feed-1">${newFeedText}</p>
+            <img src="/Team3-ClassC4EJS141/images/vu.dd/feed-image-1.png" class="post-img" feed_numb="feed-1">
+            <div class="post-row">
+                <div class="activity-icons">
+                    <div><img src="/Team3-ClassC4EJS141/images/vu.dd/like-blue.png">120</div>
+                    <div><img src="/Team3-ClassC4EJS141/images/vu.dd/comments.png">120</div>
+                    <div><img src="/Team3-ClassC4EJS141/images/vu.dd/share.png"></div>
+                </div>
+                <div class="post-profile-icon">
+                    <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
+                    <i class='bx bxs-down-arrow'></i>
+                </div>
+            </div>
+        </div>`
+        // console.log(newFeedText)
+        // newPostModal.classList.add('hide')
+        divNewPost.remove()
         mainContent.appendChild(div)
         // toggleModalNewPost()
-        console.log(btnPost)
+        // console.log(btnPost)
+
         
-    })
-    // newPostModal.addEventListener('click', function(e){
-    //     if(e.target == e.currentTarget){
-    //         toggleModalNewPost()
-    //     }
-    // })
-    
+    })    
 })
 
 window.onload

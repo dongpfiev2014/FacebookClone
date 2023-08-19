@@ -592,7 +592,14 @@ nav{
 }
 .post-new-feed-main input{
     margin-top: 20px;
+    /* background: #1876f2; */
+    margin-left: 20px;
 
+}
+
+.post-new-feed-main h5{
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 .post-new-feed-main{

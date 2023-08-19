@@ -62,7 +62,7 @@ btnWritePost.addEventListener('click', ()=>{
              </div>
              <div class="post-new-feed-main">
                 <textarea name="" id="new-feed-text" placeholder="What do you think?"></textarea>
-                <input type="text" name="" id="new-feed-text">
+                <h5>Choose image you want</h5>
                 <input type="file" id="file">
              </div>
              <div class="post-new-feed-footer">
@@ -86,7 +86,6 @@ btnWritePost.addEventListener('click', ()=>{
         reader.readAsDataURL(file);
     })
     console.log(inputFile)
-    console.log(imgURL)
     btnPost.addEventListener('click', ()=>{
         const newFeedText = document.getElementById('new-feed-text').value
         const div = document.createElement('div')
@@ -126,5 +125,5 @@ btnWritePost.addEventListener('click', ()=>{
         
     })    
 })
-
-window.onload
+// localStorage.setItem('body', body)
+// localStorage.getItem(body)

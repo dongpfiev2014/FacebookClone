@@ -1380,11 +1380,14 @@
   .ConMyPosts-1
   .ConMyPosts-1-Content
   .ConMyPosts-1-Content-Media {
-  background-color: #749b4a;
+  background-color: rgb(116, 155, 74);
   width: 100%;
   height: auto;
   overflow: hidden;
-  padding: 0 10%;
+  padding: 0 5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
 }
 
 .Main
@@ -1394,9 +1397,10 @@
   .ConMyPosts-1-Content
   .ConMyPosts-1-Content-Media
   img {
-  max-width: 100%; /* Giới hạn kích thước ảnh theo độ rộng */
-  height: 100%; /* Chiều cao tự động điều chỉnh */
+  width: 34%;
+  height: auto;
   object-fit: cover;
+  flex: 1;
 }
 
 .Main .MC-MyProfile .Content .ConMyPosts-1 .ConMyPosts-1-Com {
@@ -2157,7 +2161,7 @@
   flex-direction: column;
   padding: 0px 10px 10px 10px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
   /* display: none; */
 }
 
@@ -2169,8 +2173,22 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
   position: relative;
+}
+#StatusPanelWrapper .StatusPanel .CreatePostTit button {
+  background-color: rgb(194, 188, 188);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 #StatusPanelWrapper .StatusPanel .CreatePostContent {
@@ -2320,7 +2338,7 @@
   font-family: "Roboto", sans-serif;
   font-size: 15px;
 }
-#StatusPanelWrapper .StatusPanel .CreatePostConfirm {
+#StatusPanelWrapper .StatusPanel #CreatePostConfirm {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2334,4 +2352,5 @@
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   margin-top: 15px;
+  cursor: pointer;
 }

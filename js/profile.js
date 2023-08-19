@@ -24,15 +24,19 @@ commentBox.addEventListener("blur", function () {
 //ĐƯA BÌNH LUẬN VÀO TRONG BOX COMMENT
 
 function addComment() {
-  commentText = commentBox.value;
+  const commentText = commentBox.value;
 
   if (commentText.trim() !== "") {
+    const commentId = `Comment-${new Date().getTime()}`;
+
     const commentUser = document.querySelector(".Box-Comment");
     const commentItem = document.createElement("div");
     commentItem.classList.add("User1");
+    commentItem.id = commentId;
+
     // Thay thế các dấu xuống dòng bằng thẻ <br>
     const commentHtml = commentText.replace(/\n/g, "<br>");
-    commentItem.innerHTML = `<img src="/Team3-ClassC4EJS141/images/dong.km/Fri_5.jpg" alt="">
+    commentItem.innerHTML = `<img src="../images/dong.km/Fri_5.jpg" alt="fri_5">
                   <div class="User1-Pan">
                     <div class="User1-PanCo">
                       <div class="User1-Name">
@@ -41,14 +45,15 @@ function addComment() {
                             src="https://t3.ftcdn.net/jpg/05/43/29/02/360_F_543290296_snhXYYelZwXmXoo1sUoVMD54GXTPguWH.jpg"
                             alt="" class="BlueTick"></span>
                         <button
-                          style="color: rgb(0, 102, 255); font-weight: bold; border: none; background-color: none; cursor: pointer;">Theo
+                          style="color: rgb(0, 102, 255); font-weight: bold; border: none; background-color: #E4E6EB; cursor: pointer;">Theo
                           dõi</button>
                       </div>
                       <div class="User1-Comment">${commentText}</div>
-                      <button class="User1-Edit" id="EditDelBut">···</button>
-                      <div class="User1-Edit-Del">
-                        <button class="User1-Edit-Del-CS">Chỉnh sửa</button>
-                        <button class="User1-Edit-Del-X">Xóa</button>
+                      <button class="User1-Edit" onclick="clickEditDelBtn('${commentId}')">···</button>
+                      <div class="User1-Edit-Del" id="EditDelHolder">
+                        <button class="User1-Edit-Del-CS" onclick="editComment('${commentId}')">Chỉnh sửa</button>
+                        <button class="User1-Edit-Del-X" onclick="openConfirmModal('${commentId}')">Xóa</button>
+                        <input id="Flag" type="hidden" value="0" />
                       </div>
                     </div>
                     <div class="User1-React">
@@ -130,86 +135,140 @@ function CheckEditDel() {
   });
 }
 
-CheckEditDel();
+// CheckEditDel();
+
+const hideOpenedEditDelHolder = (newCommentId) => {
+  const oldCommentId = document.getElementById("OpenHolderCommentId").value;
+  if (!oldCommentId || newCommentId === oldCommentId) {
+    // re-set value to hidden input
+    document.getElementById("OpenHolderCommentId").value = newCommentId;
+
+    return;
+  }
+
+  // hide old holder
+  changeEditDelHolderFlag(document.getElementById(oldCommentId)?.querySelector("#EditDelHolder"), 0);
+
+  // re-set value to hidden input
+  document.getElementById("OpenHolderCommentId").value = newCommentId;
+}
 
 //EDIT BÌNH LUẬN KHI NHẤN NÚT CHỈNH SỬA
 
-const EditCommentButton = document.querySelectorAll(".User1-Edit-Del-CS");
-const DeleteCommentButton = document.querySelectorAll(".User1-Edit-Del-X");
-const comments = document.querySelectorAll(".User1-PanCo");
+// Open popup holder which have edit & delete buttons
+const changeEditDelHolderFlag = (holder, flag) => {
+  if (holder) {
+    // change holder style
+    holder.style.opacity = `${flag}`;
+    holder.style.transform = `scale(${flag})`;
+
+    // update new flag value
+    holder.querySelector("#Flag").value = flag;
+  }
+}
+const clickEditDelBtn = commentId => {
+  // hide all edit & delete holder
+  hideOpenedEditDelHolder(commentId);
+
+  // get comment container element
+  const container = document.getElementById(commentId);
+
+  // get new flag value
+  const newFlagValue = 1 - parseInt(container.querySelector("#Flag").value);
+
+  // change holder flag & style
+  const holder = container.querySelector("#EditDelHolder");
+  changeEditDelHolderFlag(holder, newFlagValue);
+}
 
 // Xử lý sự kiện khi nhấn nút "Edit"
-EditCommentButton.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    HiddenEditDel();
-    const commentText =
-      comments[index].querySelector(".User1-Comment").textContent;
+const editComment = commentId => {
+  // hide all edit & delete holder
+  hideOpenedEditDelHolder(commentId);
 
-    // Tạo element textarea và gán nội dung
-    const textarea = document.createElement("textarea");
-    textarea.value = commentText;
-    textarea.classList.add("style-edit-textarea");
+  // get comment container element
+  const container = document.getElementById(commentId);
 
-    // Thay thế phần tử .comment-text bằng textarea
-    const commentContainer = comments[index];
-    commentContainer.replaceChild(
+  // hide current edit & del holder
+  container.querySelector(".User1-Edit").click();
+
+  // Tạo element textarea và gán nội dung
+  const textarea = document.createElement("textarea");
+  textarea.value = container.querySelector(".User1-Comment").textContent;
+  textarea.classList.add("style-edit-textarea");
+
+  // Thay thế phần tử .comment-text bằng textarea
+  const commentPanCo = container.querySelector(".User1-PanCo");
+  commentPanCo.replaceChild(
       textarea,
-      commentContainer.querySelector(".User1-Comment")
-    );
+      commentPanCo.querySelector(".User1-Comment")
+  );
 
-    // Tạo nút "Save" để lưu chỉnh sửa
-    const saveButton = document.createElement("button");
-    saveButton.innerHTML = `<i class="fa-solid fa-play fa-lg"></i>`;
-    saveButton.style.fontWeight = "bold";
-    saveButton.classList.add("style-edit-savebutton");
-    commentContainer.appendChild(saveButton);
+  // Tạo nút "Save" để lưu chỉnh sửa
+  const saveButton = document.createElement("button");
+  saveButton.innerHTML = `<i class="fa-solid fa-play fa-lg"></i>`;
+  saveButton.style.fontWeight = "bold";
+  saveButton.classList.add("style-edit-savebutton");
+  commentPanCo.appendChild(saveButton);
 
-    // Xử lý sự kiện khi nhấn nút "Save"
-    function AddEditedTextToCom() {
-      const newText = textarea.value;
-      commentContainer.replaceChild(createCommentDiv(newText), textarea);
-      commentContainer.removeChild(saveButton);
-    }
-    saveButton.addEventListener("click", () => {
-      AddEditedTextToCom();
-    });
-    // Thay đổi sự kiện keydown trên textarea
-    textarea.addEventListener("keydown", (event) => {
-      if (event.keyCode === 13 && !event.shiftKey && !event.altKey) {
-        // Ngăn chặn hành vi mặc định của nút Enter (chuyển dòng) khi không có Shift hoặc Alt
-        event.preventDefault();
-        AddEditedTextToCom();
-      }
-    });
+  // Xử lý sự kiện khi nhấn nút "Save"
+  function AddEditedTextToCom() {
+    const newText = textarea.value;
+    commentPanCo.replaceChild(createCommentDiv(newText), textarea);
+    commentPanCo.removeChild(saveButton);
+  }
+
+  saveButton.addEventListener("click", () => {
+    AddEditedTextToCom();
   });
-});
+
+  // Thay đổi sự kiện keydown trên textarea
+  textarea.addEventListener("keydown", (event) => {
+    if (event.keyCode === 13 && !event.shiftKey && !event.altKey) {
+      // Ngăn chặn hành vi mặc định của nút Enter (chuyển dòng) khi không có Shift hoặc Alt
+      event.preventDefault();
+      AddEditedTextToCom();
+    }
+  });
+};
 
 // Xử lý sự kiện khi nhấn nút "Delete"
 const DeleteUserComments = document.querySelectorAll(".User1");
-const BtnConfirmDelete = document.getElementById("ConfirmYes");
 const ModalConfirmDelete = document.getElementById("modal-Del-Edit");
 const ConfirmNo = document.getElementById("ConfirmNo");
 const ConfirmYes = document.getElementById("ConfirmYes");
 const ConfirmDelOval = document.getElementById("ConfirmDelOval");
 
-DeleteCommentButton.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    ModalConfirmDelete.style.display = "flex";
-
-    ConfirmNo.addEventListener("click", () => {
-      ModalConfirmDelete.style.display = "none";
-    });
-    ConfirmDelOval.addEventListener("click", () => {
-      ModalConfirmDelete.style.display = "none";
-    });
-    DeleteUserComments.forEach((button, index) => {
-      ConfirmYes.addEventListener("click", () => {
-        DeleteUserComments[index].remove();
-        ModalConfirmDelete.style.display = "none";
-      });
-    });
-  });
+ConfirmNo.addEventListener("click", () => {
+  ModalConfirmDelete.style.display = "none";
 });
+ConfirmDelOval.addEventListener("click", () => {
+  ModalConfirmDelete.style.display = "none";
+});
+ConfirmYes.addEventListener("click", () => {
+  const commentId = document.getElementById("NeedDeleteCommentId").value;
+  if (commentId) {
+    document.getElementById(commentId).remove();
+    ModalConfirmDelete.style.display = "none";
+  }
+});
+
+const openConfirmModal = commentId => {
+  if (ModalConfirmDelete.style.display === "flex") {
+    return;
+  }
+
+  // hide all edit & delete holder
+  hideOpenedEditDelHolder(commentId);
+
+  // hide current edit & del holder
+  document.getElementById(commentId).querySelector(".User1-Edit").click();
+
+  // open modal
+  ModalConfirmDelete.style.display = "flex";
+
+  document.getElementById("NeedDeleteCommentId").value = commentId;
+}
 
 // Tạo phần tử div cho bình luận
 function createCommentDiv(text) {

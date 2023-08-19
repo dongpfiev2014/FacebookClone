@@ -1,16 +1,3 @@
-// HÀM FIXED TÊN USER LUÔN Ở TRÊN
-
-// const fixedElement = document.getElementById("bold-text");
-
-// window.addEventListener("scroll", () => {
-//   if (window.scrollY > 800) {
-//     // Điều kiện hiển thị sau khi kéo xuống 100px
-//     fixedElement.classList.remove("hidden");
-//   } else {
-//     fixedElement.classList.add("hidden");
-//   }
-// });
-
 //THAY ĐỔI VỊ TRÍ ICON CỦA THANH BÌNH LUẬN
 
 const commentBox = document.getElementById("comment-box");
@@ -45,28 +32,31 @@ function addComment() {
     commentItem.classList.add("User1");
     // Thay thế các dấu xuống dòng bằng thẻ <br>
     const commentHtml = commentText.replace(/\n/g, "<br>");
-    commentItem.innerHTML = `<img src="/Team3-ClassC4EJS141/images/dong.km/avatar.jpg" alt="">
-    <div class="User1-Pan">
-      <div class="User1-PanCo">
-        <div class="User1-Name">
-          <span class="bold-text">Luka Modrić
-            <img
-              src="https://t3.ftcdn.net/jpg/05/43/29/02/360_F_543290296_snhXYYelZwXmXoo1sUoVMD54GXTPguWH.jpg"
-              alt="" class="BlueTick"></span>
-          <button
-            style="color: rgb(0, 102, 255); font-weight: bold; border: none; background-color: none; cursor: pointer;">Theo
-            dõi</button>
-        </div>
-        <div class="User1-Comment">${commentText}</div>
-        <button class="User1-Edit">···</button>
-      </div>
-      <div class="User1-React">
-        <div>Thích</div>
-        <div>Phản hồi</div>
-        <div>1 phút</div>
-      </div>
-      
-    </div>`;
+    commentItem.innerHTML = `<img src="/Team3-ClassC4EJS141/images/dong.km/Fri_5.jpg" alt="">
+                  <div class="User1-Pan">
+                    <div class="User1-PanCo">
+                      <div class="User1-Name">
+                        <span class="bold-text">Lionel Messi
+                          <img
+                            src="https://t3.ftcdn.net/jpg/05/43/29/02/360_F_543290296_snhXYYelZwXmXoo1sUoVMD54GXTPguWH.jpg"
+                            alt="" class="BlueTick"></span>
+                        <button
+                          style="color: rgb(0, 102, 255); font-weight: bold; border: none; background-color: none; cursor: pointer;">Theo
+                          dõi</button>
+                      </div>
+                      <div class="User1-Comment">${commentText}</div>
+                      <button class="User1-Edit" id="EditDelBut">···</button>
+                      <div class="User1-Edit-Del">
+                        <button class="User1-Edit-Del-CS">Chỉnh sửa</button>
+                        <button class="User1-Edit-Del-X">Xóa</button>
+                      </div>
+                    </div>
+                    <div class="User1-React">
+                      <div>Thích</div>
+                      <div>Phản hồi</div>
+                      <div>1 phút</div>
+                    </div>
+                  </div>`;
     if (commentUser.firstChild) {
       commentUser.insertBefore(commentItem, commentUser.firstChild);
     } else {
@@ -107,35 +97,90 @@ commentBox.addEventListener("keydown", function (event) {
 
 //HIỂN THỊ BẢNG CHỈNH SỬA HOẶC XÓA BÌNH LUẬN
 
-const EditDelBut = document.getElementById("EditDelBut");
-const EditDelButPan = document.querySelectorAll(".User1-Edit-Del");
+// const EditDelBut = document.querySelectorAll(".User1-Edit");
+// console.log(EditDelBut);
+// const EditDelButPan = document.querySelectorAll(".User1-Edit-Del");
+// console.log(EditDelButPan);
 
-function DisplayEditDel() {
-  EditDelButPan.forEach((x) => {
-    x.style.opacity = "1";
-    x.style.transform = "scale(1)";
-    y = false;
-  });
+// function DisplayEditDel() {
+//   EditDelButPan.forEach((x) => {
+//     x.style.opacity = "1";
+//     x.style.transform = "scale(1)";
+//     y = false;
+//   });
+// }
+
+// function HiddenEditDel() {
+//   EditDelButPan.forEach((x) => {
+//     x.style.opacity = "0";
+//     x.style.transform = "scale(0)";
+//     y = true;
+//   });
+// }
+// let y = true;
+// function CheckEditDel() {
+//   EditDelBut.forEach((button) => {
+//     button.addEventListener("click", () => {
+//       if (y) {
+//         DisplayEditDel();
+//       } else {
+//         HiddenEditDel();
+//       }
+//     });
+//   });
+// }
+
+// CheckEditDel();
+
+// Đoạn mã để hiển thị hoặc ẩn bảng chỉnh sửa hoặc xóa
+function DisplayEditDel(editDelButPan) {
+  editDelButPan.style.opacity = "1";
+  editDelButPan.style.transform = "scale(1)";
 }
 
-function HiddenEditDel() {
-  EditDelButPan.forEach((x) => {
-    x.style.opacity = "0";
-    x.style.transform = "scale(0)";
-    y = true;
-  });
+function HiddenEditDel(editDelButPan) {
+  editDelButPan.style.opacity = "0";
+  editDelButPan.style.transform = "scale(0)";
 }
-let y = false;
-function CheckEditDel() {
-  EditDelBut.addEventListener("click", () => {
-    if (y) {
-      DisplayEditDel();
-    } else {
-      HiddenEditDel();
+
+// Hàm xử lý sự kiện click nút chỉnh sửa
+function handleEditClick(event) {
+  const editDelButPan = event.target.nextElementSibling;
+  if (y) {
+    DisplayEditDel(editDelButPan);
+  } else {
+    HiddenEditDel(editDelButPan);
+  }
+  y = !y;
+}
+
+let y = true;
+
+// Thêm sự kiện click cho các nút chỉnh sửa ban đầu
+const EditDelBut = document.querySelectorAll(".User1-Edit");
+EditDelBut.forEach((button) => {
+  button.addEventListener("click", handleEditClick);
+});
+
+// Thêm sự kiện MutationObserver để theo dõi thay đổi trong DOM
+const observer = new MutationObserver((mutationsList) => {
+  for (const mutation of mutationsList) {
+    if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+      // Nếu có thay đổi trong DOM và có các node mới được thêm vào
+      // Thêm sự kiện click cho các nút chỉnh sửa trên các comment mới
+      const newEditDelBut =
+        mutation.addedNodes[0].querySelectorAll(".User1-Edit");
+      newEditDelBut.forEach((button) => {
+        button.addEventListener("click", handleEditClick);
+      });
     }
-  });
-}
-CheckEditDel();
+  }
+});
+
+// Bắt đầu theo dõi một phần của DOM mà bạn muốn
+const targetNode = document.body; // Thay đổi để phù hợp với DOM thực tế của bạn
+const config = { childList: true, subtree: true };
+observer.observe(targetNode, config);
 
 //EDIT BÌNH LUẬN KHI NHẤN NÚT CHỈNH SỬA
 

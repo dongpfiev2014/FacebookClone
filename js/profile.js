@@ -32,7 +32,7 @@ function addComment() {
     commentItem.classList.add("User1");
     // Thay thế các dấu xuống dòng bằng thẻ <br>
     const commentHtml = commentText.replace(/\n/g, "<br>");
-    commentItem.innerHTML = `<img src="/Team3-ClassC4EJS141/images/dong.km/Fri_5.jpg" alt="">
+    commentItem.innerHTML = `<img src="../images/dong.km/Fri_5.jpg" alt="fri_5">
                   <div class="User1-Pan">
                     <div class="User1-PanCo">
                       <div class="User1-Name">
@@ -41,7 +41,7 @@ function addComment() {
                             src="https://t3.ftcdn.net/jpg/05/43/29/02/360_F_543290296_snhXYYelZwXmXoo1sUoVMD54GXTPguWH.jpg"
                             alt="" class="BlueTick"></span>
                         <button
-                          style="color: rgb(0, 102, 255); font-weight: bold; border: none; background-color: none; cursor: pointer;">Theo
+                          style="color: rgb(0, 102, 255); font-weight: bold; border: none; background-color: #E4E6EB; cursor: pointer;">Theo
                           dõi</button>
                       </div>
                       <div class="User1-Comment">${commentText}</div>

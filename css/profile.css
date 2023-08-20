@@ -2154,9 +2154,9 @@
 }
 #StatusPanelWrapper .StatusPanel {
   background-color: white;
-  max-width: 500px;
+  max-width: 550px;
   width: 100%;
-  height: 400px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   padding: 0px 10px 10px 10px;
@@ -2315,8 +2315,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  /* background-color: blueviolet; */
 }
-#StatusPanelWrapper .StatusPanel .CreatePostMedia img {
+#StatusPanelWrapper .StatusPanel .CreatePostMedia .MediaImg {
   width: 35px;
   height: 35px;
   border: none;
@@ -2324,6 +2326,7 @@
   /* border: 1px solid black; */
   background-size: cover;
   object-fit: cover;
+  /* background-color: #42464d; */
 }
 #StatusPanelWrapper .StatusPanel .CreatePostMedia button {
   display: flex;
@@ -2353,4 +2356,40 @@
   font-size: 15px;
   margin-top: 15px;
   cursor: pointer;
+}
+
+#imageUpload {
+  cursor: pointer;
+  position: absolute;
+  width: 35px;
+  height: 25px;
+  top: -10px;
+  left: 0;
+  opacity: 0;
+  /* background-color: red; */
+}
+
+.fa-solid.fa-photo-film.fa-xl {
+  position: relative;
+}
+
+#image-preview-modal {
+  position: absolute;
+  top: -170%;
+  left: 0;
+  width: 520px;
+  height: 100px;
+  margin: 5px;
+  /* background-color: #1b74e4; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+#image-preview-modal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }

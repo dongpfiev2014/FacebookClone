@@ -672,6 +672,7 @@ postButton.addEventListener("click", function () {
       }
     }
   }
+
   Post_Status_Text.value = "";
   while (imagePreviewModal.firstChild) {
     imagePreviewModal.removeChild(imagePreviewModal.firstChild);

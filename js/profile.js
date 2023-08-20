@@ -28,8 +28,6 @@ function addComment() {
 
   if (commentText.trim() !== "") {
     const commentId = `Comment-${new Date().getTime()}`;
-    const now = new Date();
-    console.log(now);
 
     const commentUser = document.querySelector(".Box-Comment");
     const commentItem = document.createElement("div");
@@ -38,7 +36,7 @@ function addComment() {
 
     // Thay thế các dấu xuống dòng bằng thẻ <br>
     const commentHtml = commentText.replace(/\n/g, "<br>");
-    commentItem.innerHTML = `<img src="/Team3-ClassC4EJS141/images/dong.km/avatar.jpg" alt="fri_5">
+    commentItem.innerHTML = `<img src="../images/dong.km/avatar.jpg" alt="fri_5">
                   <div class="User1-Pan">
                     <div class="User1-PanCo">
                       <div class="User1-Name">
@@ -351,7 +349,8 @@ imageUpload.addEventListener("change", function () {
 postButton.addEventListener("click", function () {
   const text = Post_Status_Text.value;
   const images = imageUpload.files; // Get the selected images
-  // console.log(images);
+
+  console.log(images);
 
   if (text || images.length > 0) {
     // Create a new post item
@@ -359,7 +358,7 @@ postButton.addEventListener("click", function () {
     PostItem.classList.add("ConMyPosts-1");
 
     const mediaContainerId = `mediaContainer-${Date.now()}`;
-
+    const now = new Date();
     // Create the HTML structure for the post
     let postHTML = `<div class="ConMyPosts-1-Header">
     <div class="ConMyPosts-1-Header-Left">
@@ -373,7 +372,7 @@ postButton.addEventListener("click", function () {
               alt="" class="BlueTick"></span>
         </div>
         <div class="ConMyPosts-1-Header-Left-Name-Date">
-          27 Tháng 7 lúc 22:52
+        ${now.toLocaleDateString()} lúc ${now.toLocaleTimeString()}
         </div>
       </div>
     </div>
@@ -491,5 +490,192 @@ postButton.addEventListener("click", function () {
       imagePreviewModal.removeChild(imagePreviewModal.firstChild);
     }
     ModalStatusButton.style.display = "none";
+
+    // Sau khi tạo bài post, lưu nó vào LocalStorage
+    savePostToLocalStorage(text, images);
   }
 });
+
+//
+
+// LƯU BÀI POST VÀO LOCAL STORAGE
+
+// Hàm để lưu bài post vào LocalStorage
+function savePostToLocalStorage(text, images) {
+  // Kiểm tra xem có dữ liệu đã lưu trong LocalStorage hay chưa
+  let posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+  // Chuyển đổi ảnh thành định dạng Base64 trước khi lưu
+  const imageBase64Array = [];
+  for (let i = 0; i < images.length; i++) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      imageBase64Array.push(reader.result);
+      if (imageBase64Array.length === images.length) {
+        // Sau khi chuyển đổi xong tất cả các ảnh, lưu bài post vào LocalStorage
+        const post = {
+          text: text,
+          images: imageBase64Array,
+          // Thêm các thông tin khác của bài post vào đây
+        };
+        posts.push(post);
+        localStorage.setItem("posts", JSON.stringify(posts));
+      }
+    };
+    reader.readAsDataURL(images[i]);
+  }
+}
+
+// Hàm để hiển thị các bài post đã lưu trong LocalStorage
+function displaySavedPosts() {
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+  // Lặp qua mảng các bài post và hiển thị chúng trên trang web
+  posts.forEach((post) => {
+    // Tạo các phần tử HTML tương tự như bạn đã làm trong sự kiện click postButton
+    // Để hiển thị cả văn bản và ảnh, bạn có thể sử dụng post.text cho văn bản và post.images cho các ảnh
+    // Sau đó thêm các phần tử này vào trang web để hiển thị bài post
+    const PostItem = document.createElement("div");
+    PostItem.classList.add("ConMyPosts-1");
+
+    const mediaContainerId = `mediaContainer-${Date.now()}`;
+    const now = new Date();
+    // Create the HTML structure for the post
+    let postHTML = `<div class="ConMyPosts-1-Header">
+    <div class="ConMyPosts-1-Header-Left">
+      <img src="../images/dong.km/avatar.jpg" alt="">
+      <div class="ConMyPosts-1-Header-Left-Name">
+        <div class="ConMyPosts-1-Header-Left-Name-Up">
+          <span class="bold-text">
+            Luka Modrić
+            <img
+              src="https://t3.ftcdn.net/jpg/05/43/29/02/360_F_543290296_snhXYYelZwXmXoo1sUoVMD54GXTPguWH.jpg"
+              alt="" class="BlueTick"></span>
+        </div>
+        <div class="ConMyPosts-1-Header-Left-Name-Date">
+        ${now.toLocaleDateString()} lúc ${now.toLocaleTimeString()}
+        </div>
+      </div>
+    </div>
+    <div class="ConMyPosts-1-Header-Right">
+      <div>···</div>
+    </div>
+  </div>
+  <div class="ConMyPosts-1-Content">
+    <div class="ConMyPosts-1-Content-Para">
+      ${post.text}
+    </div>
+    <div class="ConMyPosts-1-Content-Media" id="${mediaContainerId}">
+    ${post.images.map((image) => `<img src="${image}" alt="Image">`).join("")}
+    </div>
+    </div>
+  </div>
+  <div class="ConMyPosts-1-Com">
+    <div class="ConMyPosts-1-Com-Rea">
+      <div class="ConMyPosts-1-Com-React">
+        <img
+          src="data:image/png;base64,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"
+          alt="">
+        <img src="https://www.freeiconspng.com/thumbs/facebook-love-png/facebook-love-png-3.png" alt="">
+        <p style="margin-left: 8px;"></p>
+      </div>
+      <div class="ConMyPosts-1-Com-Sum">
+        <div class="ConMyPosts-1-Com-SumCom">
+          <p></p>
+          <i class="fa-solid fa-comment fa-xl"></i>
+        </div>
+        <div class="ConMyPosts-1-Com-SumSha">
+          <p></p>
+          <i class="fa-solid fa-share fa-xl"></i>
+        </div>
+      </div>
+    </div>
+    <hr class="customBio-hr" />
+    <div class="ConMyPosts-1-Com-Like">
+      <button class="ConMyPosts-1-Com-But">
+        <i class="fa-regular fa-thumbs-up fa-lg"></i>Thích</button>
+      <button class="ConMyPosts-1-Com-But">
+        <i class="fa-regular fa-comment-dots fa-lg"></i>Bình luận</button>
+      <button class="ConMyPosts-1-Com-But">
+        <i class="fa-regular fa-share-from-square fa-lg"></i>Chia sẻ</button>
+    </div>
+    <hr class="customBio-hr" />
+    <div class="ConMyPosts-1-Com-Comment">
+      <div class="comment-avatar">
+        <img src="../images/dong.km/avatar.jpg" alt="Avatar">
+      </div>
+      <div class="comment-wrapper" id="expandable-comment-box">
+        <textarea id="comment-box" placeholder="Viết bình luận..."></textarea>
+        <div id="comment-icon">
+          <i class="fa-regular fa-note-sticky fa-lg"></i>
+          <i class="fa-regular fa-face-smile fa-lg"></i>
+          <i class="fa-solid fa-camera fa-lg"></i>
+          <i class="fa-regular fa-images fa-lg"></i>
+          <i class="fa-solid fa-user-ninja fa-lg"></i>
+        </div>
+        <button id="comment-button" class="hidden">
+          <i class="fa-solid fa-play fa-xl"></i>
+        </button>
+      </div>
+    </div>
+    <div class="Box-Comment">
+    </div>
+  </div>
+  <div class="Post1-SeeAll">
+    <button class="SeeMore">Xem thêm bình luận</button>
+  </div>`;
+
+    // Set the HTML content of the post item
+    PostItem.innerHTML = postHTML;
+
+    // Thêm bài post vào trang web
+    const PostStatusBox = document.querySelector(".ConMyPost");
+    if (PostStatusBox.firstChild) {
+      PostStatusBox.insertBefore(PostItem, PostStatusBox.firstChild);
+    } else {
+      PostStatusBox.appendChild(PostItem);
+    }
+  });
+}
+
+//THAY ĐỔI ẢNH BÌA VÀ AVATAR
+//ẢNH BÌA
+const inputFileCover = document.getElementById("CoverFile");
+
+const Cover = document.getElementById("ImgCover");
+inputFileCover.addEventListener("change", (e) => {
+  const file = e.currentTarget.files[0];
+
+  let reader = new FileReader();
+  reader.onloadend = function () {
+    Cover.setAttribute("src", reader.result);
+    localStorage.setItem("Cover", reader.result);
+  };
+  reader.readAsDataURL(file);
+});
+
+window.onload = () => {
+  Cover.setAttribute("src", localStorage.getItem("Cover"));
+};
+
+//ẢNH AVATAR
+const inputFileAvatar = document.getElementById("AvatarFile");
+
+const Avatar = document.getElementById("avatar");
+inputFileAvatar.addEventListener("change", (e) => {
+  const file = e.currentTarget.files[0];
+
+  let reader = new FileReader();
+  reader.onloadend = function () {
+    Avatar.setAttribute("src", reader.result);
+    localStorage.setItem("Avatar", reader.result);
+  };
+  reader.readAsDataURL(file);
+});
+
+window.onload = () => {
+  Avatar.setAttribute("src", localStorage.getItem("Avatar"));
+};
+
+//HIỂN THỊ LẠI POST TỪ LOCAL
+displaySavedPosts();

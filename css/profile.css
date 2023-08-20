@@ -193,11 +193,13 @@
   height: 100%;
   /* background-size: cover; */
   /* z-index: 2; */
-  /* position: absolute; */
+  position: relative;
 }
 .Main .MainBackGround .MainBG-Content .CoverPhoto .MidCover img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  overflow: hidden;
   background-size: cover;
   border-radius: 0 0 15px 15px;
 }
@@ -216,6 +218,7 @@
   height: 100%;
   background-color: none;
   display: flex;
+  position: relative;
   /* margin-left: 30px; */
   /* position: relative; */
 }
@@ -228,6 +231,7 @@
   margin-top: -30px;
   border: 4px solid white;
   margin-left: 35px;
+  z-index: 10;
 }
 .Main .MainBackGround .MainBG-Content .Profile .FullName {
   /* background-color: yellow; */
@@ -2430,4 +2434,47 @@
   object-fit: cover;
   overflow: hidden;
   border-radius: 10px;
+}
+#CoverFile {
+  display: none;
+}
+
+.Cover-custom-file-upload {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 40px;
+  bottom: 20px;
+  right: 35px;
+  gap: 10px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.4); /* Đặt màu nền trong suốt khi hover */
+}
+.Cover-custom-file-upload:hover {
+  background-color: #2980b9;
+}
+
+#AvatarFile {
+  display: none;
+}
+
+.Avatar-custom-file-upload {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: #d4d8e0;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  left: 75%;
+  top: 58%;
 }

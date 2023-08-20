@@ -654,10 +654,6 @@ inputFileCover.addEventListener("change", (e) => {
   reader.readAsDataURL(file);
 });
 
-window.onload = () => {
-  Cover.setAttribute("src", localStorage.getItem("Cover"));
-};
-
 //ẢNH AVATAR
 const inputFileAvatar = document.getElementById("AvatarFile");
 
@@ -675,6 +671,7 @@ inputFileAvatar.addEventListener("change", (e) => {
 
 window.onload = () => {
   Avatar.setAttribute("src", localStorage.getItem("Avatar"));
+  Cover.setAttribute("src", localStorage.getItem("Cover"));
 };
 
 //HIỂN THỊ LẠI POST TỪ LOCAL

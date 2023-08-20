@@ -1043,6 +1043,18 @@
   resize: none;
   cursor: pointer;
   position: relative;
+  transition: all 0.2s linear;
+  /* pointer-events: none; */
+}
+
+.Main
+  .MainContent
+  .MC-MyProfile
+  .Content
+  .ConMinds
+  .ConMindsPan
+  .status-input:hover {
+  background-color: #d3d0d0;
 }
 
 .status-input::placeholder {
@@ -1186,6 +1198,17 @@
   .Content
   .ConPostsPanel
   .ConPostsPan-Grid
+  .ConPostsPan-Grid1:hover,
+.ConPostsPan-Grid2:hover {
+  background-color: #e4e6eb;
+}
+
+.Main
+  .MainContent
+  .MC-MyProfile
+  .Content
+  .ConPostsPanel
+  .ConPostsPan-Grid
   .ConPostsPan-Grid1,
 .ConPostsPan-Grid2 {
   background-color: white;
@@ -1199,6 +1222,8 @@
   font-weight: bold;
   border: none;
   cursor: pointer;
+  transition: all 0.2s linear;
+  border-radius: 10px;
   /* margin-top: 5px; */
 }
 
@@ -1403,7 +1428,7 @@
   .ConMyPosts-1-Content
   .ConMyPosts-1-Content-Media
   img {
-  width: 34%;
+  width: 40%;
   height: auto;
   object-fit: cover;
   flex: 1;
@@ -1625,6 +1650,7 @@
   padding: 5px;
   position: relative;
   transition: height 0.4s;
+  /* pointer-events: none; */
   /* height: 200px; */
 }
 
@@ -2398,4 +2424,5 @@
   height: 100%;
   object-fit: cover;
   overflow: hidden;
+  border-radius: 10px;
 }

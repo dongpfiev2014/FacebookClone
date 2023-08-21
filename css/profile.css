@@ -144,6 +144,8 @@
   width: 100%;
   height: 690px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Main .MainBackGround .LeftBGBlank {
@@ -2477,4 +2479,107 @@
   z-index: 10;
   left: 75%;
   top: 58%;
+}
+
+/* //RESPONSIVE// */
+
+@media (max-width: 1400px) {
+  /* nothing change */
+}
+@media (max-width: 1200px) {
+  .Main .MainBackGround .MainBG-Content .Profile .FullName {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .FullName .bold-text {
+    text-align: center;
+  }
+
+  .FullName .light-text {
+    text-align: center;
+  }
+
+  .FullName .MutualFriends {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  .FN-Friends {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    transform: translate(100%, 500%); /* Dùng transform để căn giữa */
+  }
+  .FN-Friends:nth-child(1) {
+    transform: translate(-75px, 0);
+  }
+  .FN-Friends:nth-child(2) {
+    transform: translate(-50px, 0);
+  }
+  .FN-Friends:nth-child(3) {
+    transform: translate(-25px, 0);
+  }
+  .FN-Friends:nth-child(4) {
+    transform: translate(0px, 0);
+  }
+  .FN-Friends:nth-child(5) {
+    transform: translate(25px, 0);
+  }
+}
+@media (max-width: 1024px) {
+  .AddMess {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .Main .MainBackGround .MainBG-Content .Profile {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  .Main .MainBackGround {
+    /* background-color: yellow; */
+    width: 100%;
+    height: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .Main .MainContent .MC-MyProfile {
+    background-color: #f0f2f5;
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Main .MainContent .MC-MyProfile .PerLib {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .Main .MainContent .MC-MyProfile .Content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
 }

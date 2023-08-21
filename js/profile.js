@@ -36,7 +36,7 @@ function addComment() {
 
     // Thay thế các dấu xuống dòng bằng thẻ <br>
     const commentHtml = commentText.replace(/\n/g, "<br>");
-    commentItem.innerHTML = `<img src="../images/dong.km/avatar.jpg" alt="fri_5">
+    commentItem.innerHTML = `<img class="avatar" src="../images/dong.km/avatar.jpg" alt="fri_5">
                   <div class="User1-Pan">
                     <div class="User1-PanCo">
                       <div class="User1-Name">
@@ -362,7 +362,7 @@ postButton.addEventListener("click", function () {
     // Create the HTML structure for the post
     let postHTML = `<div class="ConMyPosts-1-Header">
     <div class="ConMyPosts-1-Header-Left">
-      <img src="../images/dong.km/avatar.jpg" alt="">
+      <img class="avatar" src="../images/dong.km/avatar.jpg" alt="">
       <div class="ConMyPosts-1-Header-Left-Name">
         <div class="ConMyPosts-1-Header-Left-Name-Up">
           <span class="bold-text">
@@ -419,8 +419,8 @@ postButton.addEventListener("click", function () {
     <hr class="customBio-hr" />
     <div class="ConMyPosts-1-Com-Comment">
       <div class="comment-avatar">
-        <img src="../images/dong.km/avatar.jpg" alt="Avatar">
-      </div>
+        <img class="avatar" src="../images/dong.km/avatar.jpg" alt="Avatar">
+      </div> 
       <div class="comment-wrapper" id="expandable-comment-box">
         <textarea id="comment-box" placeholder="Viết bình luận..."></textarea>
         <div id="comment-icon">
@@ -543,7 +543,7 @@ function displaySavedPosts() {
     // Create the HTML structure for the post
     let postHTML = `<div class="ConMyPosts-1-Header">
     <div class="ConMyPosts-1-Header-Left">
-      <img src="../images/dong.km/avatar.jpg" alt="">
+      <img class="avatar" src="../images/dong.km/avatar.jpg" alt="">
       <div class="ConMyPosts-1-Header-Left-Name">
         <div class="ConMyPosts-1-Header-Left-Name-Up">
           <span class="bold-text">
@@ -602,7 +602,7 @@ function displaySavedPosts() {
     <hr class="customBio-hr" />
     <div class="ConMyPosts-1-Com-Comment">
       <div class="comment-avatar">
-        <img src="../images/dong.km/avatar.jpg" alt="Avatar">
+        <img class="avatar" src="../images/dong.km/avatar.jpg" alt="Avatar">
       </div>
       <div class="comment-wrapper" id="expandable-comment-box">
         <textarea id="comment-box" placeholder="Viết bình luận..."></textarea>
@@ -657,22 +657,40 @@ inputFileCover.addEventListener("change", (e) => {
 //ẢNH AVATAR
 const inputFileAvatar = document.getElementById("AvatarFile");
 
-const Avatar = document.getElementById("avatar");
+const Avatar = document.querySelectorAll(".avatar");
+
+// Lấy ảnh avatar từ Local Storage nếu có
+const storedAvatar = localStorage.getItem("Avatar");
+if (storedAvatar) {
+  Avatar.forEach((img) => {
+    img.setAttribute("src", storedAvatar);
+  });
+}
+
 inputFileAvatar.addEventListener("change", (e) => {
   const file = e.currentTarget.files[0];
 
   let reader = new FileReader();
   reader.onloadend = function () {
-    Avatar.setAttribute("src", reader.result);
+    Avatar.forEach((img) => {
+      img.setAttribute("src", reader.result);
+    });
     localStorage.setItem("Avatar", reader.result);
   };
   reader.readAsDataURL(file);
 });
 
 window.onload = () => {
-  Avatar.setAttribute("src", localStorage.getItem("Avatar"));
+  Avatar.forEach((img) => {
+    img.setAttribute("src", localStorage.getItem("Avatar"));
+  });
   Cover.setAttribute("src", localStorage.getItem("Cover"));
 };
 
+// Đặt một ảnh mặc định vào Local Storage
+if (!localStorage.getItem("Avatar")) {
+  localStorage.setItem("Avatar", "../images/dong.km/avatar.jpg");
+  localStorage.setItem("Cover", "../images/dong.km/cover.jpeg");
+}
 //HIỂN THỊ LẠI POST TỪ LOCAL
 displaySavedPosts();

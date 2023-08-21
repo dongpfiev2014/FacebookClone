@@ -545,6 +545,8 @@ nav{
 
 .post-img-modal-right {
     flex-basis: 25%;
+    display: block;
+    
 }
 
 .post-img-modal-left img{
@@ -553,7 +555,7 @@ nav{
     
 }
 .post-img-modal-right{
-    padding: 10px;
+    padding: 20px;
 }
 .hide{
     display: none;
@@ -679,6 +681,8 @@ nav{
     justify-content: space-between;
     color: #626262;
 }
+
+
 
 
 @media (max-width:900px) {

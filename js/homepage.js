@@ -16,20 +16,20 @@ imgShow.forEach((img) => {
     img.addEventListener('click', ()=>{
         const imgURL = img.getAttribute('src')
         const pURL = img.getAttribute('feed_numb')
-        // console.log(pURL)
-        // console.log(imgURL)
+        const divUser = img.getAttribute('user_id')
         const pText = document.getElementById(pURL)
-
-        // console.log(pText)
-        // console.log(pText.innerHTML)
+        const divUserIcon = document.getElementById(divUser)
         div.innerHTML = `
         <div class="post-img-modal-inner">
             <div class="post-img-modal-left">
                 <img src="${imgURL}">
             </div>
             <div class="post-img-modal-right">
+                <div class="user-profile">
+                    ${divUserIcon.innerHTML}
+                </div>
+                
                 <p>${pText.innerHTML}</p>
-            </div>
         </div>`
         body.appendChild(div)
         toggleModalImage()

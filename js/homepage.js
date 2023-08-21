@@ -115,15 +115,8 @@ btnWritePost.addEventListener('click', ()=>{
                 </div>
             </div>
         </div>`
-        // console.log(newFeedText)
-        // newPostModal.classList.add('hide')
-        divNewPost.remove()
-        mainContent.appendChild(div)
-        // toggleModalNewPost()
-        // console.log(btnPost)
-
         
+        divNewPost.remove()
+        mainContent.appendChild(div)    
     })    
 })
-// localStorage.setItem('body', body)
-// localStorage.getItem(body)

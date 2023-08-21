@@ -120,3 +120,10 @@ btnWritePost.addEventListener('click', ()=>{
         mainContent.appendChild(div)    
     })    
 })
+
+
+const profileImage = document.getElementById('profileImage')
+const settingsMenu = document.getElementById('settings')
+profileImage.addEventListener('click', ()=>{
+    settingsMenu.classList.toggle('hide')
+})

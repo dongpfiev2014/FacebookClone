@@ -679,3 +679,49 @@ nav{
     justify-content: space-between;
     color: #626262;
 }
+
+
+@media (max-width:900px) {
+    .right-sidebar{
+        display: none;
+    }
+    .left-sidebar{
+        display: none;
+    }
+    nav{
+        flex-wrap: wrap;
+    }
+    .nav-left .search-box{
+        display: none;
+    }
+    .logo{
+        width: 8px;
+        margin-right: 20px;
+    }
+    .nav-mid{
+        display: none;
+    }
+    
+    .add-post-links{
+        flex-wrap: wrap;
+    }
+    .main-content{
+        flex-basis: 100%;
+    }
+    .story img{
+        width: 20px;
+        border-width: 3px;
+    }
+    .story p{
+        font-size: 10px;
+    }
+    .add-post-links a{
+        margin-right: 12px;
+        font-size: 9px;
+
+    }
+    .add-post-links a img{
+        width: 16px;
+        margin-right: 5px;
+    }
+}

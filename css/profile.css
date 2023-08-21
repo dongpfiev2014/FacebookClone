@@ -7,7 +7,7 @@
 .header {
   width: 100%;
   height: 50px;
-  background-color: white;
+  background-color: #1879f2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@
   align-items: center;
   margin-left: 18px;
   /* margin-top: 5px; */
-  background-color: white;
+  background-color: #1879f2;
   position: absolute;
 }
 
@@ -83,7 +83,7 @@
 .Market:hover,
 .Group:hover,
 .Games:hover {
-  background-color: #f0f2f5;
+  background-color: #d3d3d3;
   /* width: 100%; */
 }
 .header .Right-Header {
@@ -212,7 +212,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  /* background-color: red; */
 }
 
 .Main .MainBackGround .MainBG-Content .Profile .PerImage {
@@ -2487,6 +2487,10 @@
   /* nothing change */
 }
 @media (max-width: 1200px) {
+  .Mid-Header {
+    display: none;
+    opacity: 0;
+  }
   .Main .MainBackGround .MainBG-Content .Profile .FullName {
     width: 50%;
     height: 100%;
@@ -2494,13 +2498,16 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-color: white;
   }
   .FullName .bold-text {
     text-align: center;
+    /* background-color: green; */
   }
 
   .FullName .light-text {
     text-align: center;
+    /* background-color: yellow; */
   }
 
   .FullName .MutualFriends {
@@ -2536,34 +2543,85 @@
   }
 }
 @media (max-width: 1024px) {
-  .AddMess {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
   .Main .MainBackGround .MainBG-Content .Profile {
+    /* background-color: red; */
     width: 100%;
-    height: 25%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    /* background-color: white; */
   }
+  .Main .MainBackGround .MainBG-Content .Profile .AddMess {
+    /* background-color: blue; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-right: 0 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 5px;
+    padding-bottom: 5px;
+  }
+  .Main .MainBackGround .MainBG-Content .Profile .FullName {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-color: brown; */
+    padding-bottom: 45px;
+    padding-top: -100px;
+  }
+
   .Main .MainBackGround {
     /* background-color: yellow; */
     width: 100%;
-    height: 1400px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
+  .Main .MainBackGround .MainBG-Content .Profile .PerImage {
+    width: 18%;
+    height: 100%;
+    background-color: none;
+    display: flex;
+    position: relative;
+    /* margin-left: 30px; */
+    /* position: relative; */
+  }
+
+  .Main .MainBackGround .MainBG-Content .Profile .PerImage img {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: -100px;
+    border: 4px solid white;
+    margin-left: 0px;
+    z-index: 10;
+  }
+  .Main .MainContent .MC-MyProfile {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
 }
 @media (max-width: 768px) {
+  .Main .MainContent {
+    /* background-color: greenyellow; */
+    max-width: 768px;
+  }
   .Main .MainContent .MC-MyProfile {
-    background-color: #f0f2f5;
-    width: 100%;
+    /* background-color: red; */
+    max-width: 748px;
     height: auto;
     display: flex;
     margin: 0 auto;
@@ -2574,12 +2632,23 @@
   }
   .Main .MainContent .MC-MyProfile .PerLib {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
   }
   .Main .MainContent .MC-MyProfile .Content {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
+    /* background-color: #2980b9; */
+  }
+  .Main .MainBackGround .MainBG-Content .Profile .PerImage img {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: -100px;
+    border: 4px solid white;
+    margin-left: -25px;
+    z-index: 10;
   }
 }

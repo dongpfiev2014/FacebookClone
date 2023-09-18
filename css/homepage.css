@@ -320,27 +320,27 @@ nav {
 
 .story1 {
   background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
-    url(/Team3-ClassC4EJS141/images/vu.dd/status-1.png);
+    url(../images/vu.dd/status-1.png);
 }
 
 .story2 {
   background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
-    url(/Team3-ClassC4EJS141/images/vu.dd/status-2.png);
+    url(../images/vu.dd/status-2.png);
 }
 
 .story3 {
   background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
-    url(/Team3-ClassC4EJS141/images/vu.dd/status-3.png);
+    url(../images/vu.dd/status-3.png);
 }
 
 .story4 {
   background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
-    url(/Team3-ClassC4EJS141/images/vu.dd/status-4.png);
+    url(../images/vu.dd/status-4.png);
 }
 
 .story5 {
   background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
-    url(/Team3-ClassC4EJS141/images/vu.dd/status-5.png);
+    url(../images/vu.dd/status-5.png);
 }
 
 .story.story1 img {

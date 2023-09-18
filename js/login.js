@@ -1,46 +1,46 @@
-const btnLogin = document.getElementById('btnLogin')
-const emailInput = document.getElementById('emailInput')
-const passwordInput = document.getElementById('passwordInput')
-const body = document.getElementById('body')
-const btnRegister = document.getElementById('register')
-console.log(btnRegister)
+const btnLogin = document.getElementById("btnLogin");
+const emailInput = document.getElementById("emailInput");
+const passwordInput = document.getElementById("passwordInput");
+const body = document.getElementById("body");
+const btnRegister = document.getElementById("register");
+console.log(btnRegister);
 
 const listLogin = [
-    {
-        email: 'test@gmail.com',
-        password: '1234'
-    },
-    {
-        email: 'test1@gmail.com',
-        password: '1234'
-    },
-    {
-       email: 'test2@gmail.com',
-       password: '1234' 
+  {
+    email: "test@gmail.com",
+    password: "1234",
+  },
+  {
+    email: "test1@gmail.com",
+    password: "1234",
+  },
+  {
+    email: "test2@gmail.com",
+    password: "1234",
+  },
+];
+
+btnLogin.addEventListener("click", () => {
+  let count = 0;
+  for (let i = 0; i < listLogin.length; i++) {
+    if (
+      emailInput.value == listLogin[i].email &&
+      passwordInput.value == listLogin[i].password
+    ) {
+      count++;
+      break;
     }
-]
+  }
+  if (count > 0) {
+    window.location.href = "../html/homepage.html";
+  } else {
+    alert("login fail");
+  }
+});
 
-
-btnLogin.addEventListener('click', ()=>{
-
-    let count = 0
-    for(let i =0; i<listLogin.length; i++){
-        
-        if(emailInput.value == listLogin[i].email && passwordInput.value == listLogin[i].password ){
-            count++
-            break   
-        }
-    }
-    if(count > 0){
-        window.location.href = '/Team3-ClassC4EJS141/html/homepage.html'
-    }else{
-        alert("login fail")
-    }
-})
-
-btnRegister.addEventListener('click', ()=>{
-    const divRegister = document.createElement('div')
-    divRegister.innerHTML = `
+btnRegister.addEventListener("click", () => {
+  const divRegister = document.createElement("div");
+  divRegister.innerHTML = `
     <div class="register" id="registerModal">
         <div class="register-modal">
             <div class="register-modal-header">
@@ -94,27 +94,26 @@ btnRegister.addEventListener('click', ()=>{
             </div>
         </div>
     </div>
-    `
-    body.appendChild(divRegister)
-    const btnRegisterModal = document.getElementById('btnRegisterModal')
-    const registerModal = document.getElementById('registerModal')
-    registerModal.addEventListener('click', function(e){
-        if(e.target == e.currentTarget){
-            body.removeChild(divRegister)
-        }
-    })
-    console.log(btnRegisterModal)
-    btnRegisterModal.addEventListener('click', ()=>{
-        const emailModalInput = document.getElementById('emailModalInput')
-        const passwordModalInput = document.getElementById('passwordModalInput')
-        body.removeChild(divRegister)
-        console.log(emailModalInput.value)
-        console.log(passwordModalInput.value)
-        listLogin.push({
-            email: emailModalInput.value,
-            password: passwordModalInput.value
-        })
-        console.log(listLogin)
-    })
-})
-
+    `;
+  body.appendChild(divRegister);
+  const btnRegisterModal = document.getElementById("btnRegisterModal");
+  const registerModal = document.getElementById("registerModal");
+  registerModal.addEventListener("click", function (e) {
+    if (e.target == e.currentTarget) {
+      body.removeChild(divRegister);
+    }
+  });
+  console.log(btnRegisterModal);
+  btnRegisterModal.addEventListener("click", () => {
+    const emailModalInput = document.getElementById("emailModalInput");
+    const passwordModalInput = document.getElementById("passwordModalInput");
+    body.removeChild(divRegister);
+    console.log(emailModalInput.value);
+    console.log(passwordModalInput.value);
+    listLogin.push({
+      email: emailModalInput.value,
+      password: passwordModalInput.value,
+    });
+    console.log(listLogin);
+  });
+});

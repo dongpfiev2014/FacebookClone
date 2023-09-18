@@ -1,25 +1,24 @@
 // Tao image Modal
-const imageModal = document.querySelector('.post-img-modal')
-const body = document.getElementById('body')
-const div = document.getElementById('img-modal')
+const imageModal = document.querySelector(".post-img-modal");
+const body = document.getElementById("body");
+const div = document.getElementById("img-modal");
 
-const imgShow = document.querySelectorAll('.post-img')
+const imgShow = document.querySelectorAll(".post-img");
 // console.log(imgShow)
 
-function  toggleModalImage (){
-    imageModal.classList.toggle('hide')
+function toggleModalImage() {
+  imageModal.classList.toggle("hide");
 }
 // console.log(imgShow)
 
-
 imgShow.forEach((img) => {
-    img.addEventListener('click', ()=>{
-        const imgURL = img.getAttribute('src')
-        const pURL = img.getAttribute('feed_numb')
-        const divUser = img.getAttribute('user_id')
-        const pText = document.getElementById(pURL)
-        const divUserIcon = document.getElementById(divUser)
-        div.innerHTML = `
+  img.addEventListener("click", () => {
+    const imgURL = img.getAttribute("src");
+    const pURL = img.getAttribute("feed_numb");
+    const divUser = img.getAttribute("user_id");
+    const pText = document.getElementById(pURL);
+    const divUserIcon = document.getElementById(divUser);
+    div.innerHTML = `
         <div class="post-img-modal-inner">
             <div class="post-img-modal-left">
                 <img src="${imgURL}">
@@ -30,31 +29,30 @@ imgShow.forEach((img) => {
                 </div>
                 
                 <p>${pText.innerHTML}</p>
-        </div>`
-        body.appendChild(div)
-        toggleModalImage()
+        </div>`;
+    body.appendChild(div);
+    toggleModalImage();
+  });
+});
 
-    }) 
-})
-
-imageModal.addEventListener('click', function(e){
-    if(e.target == e.currentTarget){
-        toggleModalImage()
-    }
-})
+imageModal.addEventListener("click", function (e) {
+  if (e.target == e.currentTarget) {
+    toggleModalImage();
+  }
+});
 
 //-------Tao bai viet
-const btnWritePost = document.getElementById('btn-write-post')
-const newPostModal = document.querySelector('.post-new-feed')
-const mainContent = document.getElementById('main-content')
+const btnWritePost = document.getElementById("btn-write-post");
+const newPostModal = document.querySelector(".post-new-feed");
+const mainContent = document.getElementById("main-content");
 
-function toggleModalNewPost (){
-    newPostModal.classList.toggle('hide')
+function toggleModalNewPost() {
+  newPostModal.classList.toggle("hide");
 }
 
-btnWritePost.addEventListener('click', ()=>{
-    const divNewPost = document.createElement('div')
-    divNewPost.innerHTML = ` 
+btnWritePost.addEventListener("click", () => {
+  const divNewPost = document.createElement("div");
+  divNewPost.innerHTML = ` 
     <div class="post-new-feed">
         <div class="post-new-feed-inner">
             <div class="post-new-feed-header">
@@ -69,31 +67,30 @@ btnWritePost.addEventListener('click', ()=>{
                  <button id="btn-post">Post</button>
              </div>
         </div>
-    </div>`
-    body.appendChild(divNewPost)
-    console.log(divNewPost)
-    const btnPost = document.getElementById('btn-post')
-    const imgURL = ''
-    const inputFile = document.getElementById("file")
-    inputFile.addEventListener('change', (e)=>{
-        const file = e.currentTarget.files[0]
-        console.log(e.currentTarget.files[0])
-        let reader = new FileReader();
-        reader.onloadend = function () {
-            
-            localStorage.setItem("post-image", reader.result);
-        };
-        reader.readAsDataURL(file);
-    })
-    console.log(inputFile)
-    btnPost.addEventListener('click', ()=>{
-        const newFeedText = document.getElementById('new-feed-text').value
-        const div = document.createElement('div')
-        div.innerHTML = `
+    </div>`;
+  body.appendChild(divNewPost);
+  console.log(divNewPost);
+  const btnPost = document.getElementById("btn-post");
+  const imgURL = "";
+  const inputFile = document.getElementById("file");
+  inputFile.addEventListener("change", (e) => {
+    const file = e.currentTarget.files[0];
+    console.log(e.currentTarget.files[0]);
+    let reader = new FileReader();
+    reader.onloadend = function () {
+      localStorage.setItem("post-image", reader.result);
+    };
+    reader.readAsDataURL(file);
+  });
+  console.log(inputFile);
+  btnPost.addEventListener("click", () => {
+    const newFeedText = document.getElementById("new-feed-text").value;
+    const div = document.createElement("div");
+    div.innerHTML = `
         <div class="post-container">
             <div class="post-row">
                        <div class="user-profile">
-                        <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
+                        <img src="../images/vu.dd/profile-pic.png">
                         <div>
                             <p>Duong Dinh Vu</p>
                             <span>August 4 2023, 10:40</span>
@@ -102,28 +99,29 @@ btnWritePost.addEventListener('click', ()=>{
                     <a href="#"><i class='bx bx-edit-alt'></i></a>
             </div>
             <p class="post-text" id="feed-1">${newFeedText}</p>
-            <img src="${localStorage.getItem("post-image")}" class="post-img" feed_numb="feed-1">
+            <img src="${localStorage.getItem(
+              "post-image"
+            )}" class="post-img" feed_numb="feed-1">
             <div class="post-row">
                 <div class="activity-icons">
-                    <div><img src="/Team3-ClassC4EJS141/images/vu.dd/like-blue.png">120</div>
-                    <div><img src="/Team3-ClassC4EJS141/images/vu.dd/comments.png">120</div>
-                    <div><img src="/Team3-ClassC4EJS141/images/vu.dd/share.png"></div>
+                    <div><img src="../images/vu.dd/like-blue.png">120</div>
+                    <div><img src="../images/vu.dd/comments.png">120</div>
+                    <div><img src="../images/vu.dd/share.png"></div>
                 </div>
                 <div class="post-profile-icon">
-                    <img src="/Team3-ClassC4EJS141/images/vu.dd/profile-pic.png">
+                    <img src="../images/vu.dd/profile-pic.png">
                     <i class='bx bxs-down-arrow'></i>
                 </div>
             </div>
-        </div>`
-        
-        divNewPost.remove()
-        mainContent.appendChild(div)    
-    })    
-})
+        </div>`;
 
+    divNewPost.remove();
+    mainContent.appendChild(div);
+  });
+});
 
-const profileImage = document.getElementById('profileImage')
-const settingsMenu = document.getElementById('settings')
-profileImage.addEventListener('click', ()=>{
-    settingsMenu.classList.toggle('hide')
-})
+const profileImage = document.getElementById("profileImage");
+const settingsMenu = document.getElementById("settings");
+profileImage.addEventListener("click", () => {
+  settingsMenu.classList.toggle("hide");
+});

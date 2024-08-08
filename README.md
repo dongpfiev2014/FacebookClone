@@ -37,6 +37,7 @@ To get started with this project, clone the repository and open the `index.html`
 ```sh
 git clone https://github.com/dongpfiev2014/FacebookClone.git
 cd FacebookClone
+```
 
 ## Usage
 Open the index.html file in your preferred web browser to view the Facebook clone.

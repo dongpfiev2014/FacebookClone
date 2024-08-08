@@ -10,8 +10,6 @@ A static website project that clones the Facebook homepage using HTML, CSS, and 
 - [Setup](#setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
-- [Screenshots](#screenshots)
 - [Contact](#contact)
 
 ## Introduction
@@ -32,18 +30,22 @@ This project is a static clone of the Facebook homepage. It was built to practic
 
 ## Setup
 
-To get started with this project, clone the repository and open the `index.html` file in your web browser.
+To get started with this project, clone the repository and open the `profile.html` file in your web browser.
 
 ```sh
 git clone https://github.com/dongpfiev2014/FacebookClone.git
 cd FacebookClone
+cd .\html\
+start chrome path\to\your\file\profile.html
 ```
 
 ## Usage
+
 Open the index.html file in your preferred web browser to view the Facebook clone.
 open index.html
 
 ## Contributing
+
 Contributions are welcome! If you would like to contribute, please follow these steps:
 
 1. Fork the repository.
@@ -54,6 +56,7 @@ Contributions are welcome! If you would like to contribute, please follow these 
 6. Create a pull request.
 
 ## Contact
+
 For any questions or suggestions, please reach out to:
 
 Name: Khổng Minh Đông
